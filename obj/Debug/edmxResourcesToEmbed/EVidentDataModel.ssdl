@@ -1,0 +1,1297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EVidentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="EVidentModelStoreContainer">
+    <EntitySet Name="AddressBook" EntityType="EVidentModel.Store.AddressBook" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Commune" EntityType="EVidentModel.Store.Commune" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="EVidentModel.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanyPkd" EntityType="EVidentModel.Store.CompanyPkd" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanyRight" EntityType="EVidentModel.Store.CompanyRight" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Configuration" EntityType="EVidentModel.Store.Configuration" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contractor" EntityType="EVidentModel.Store.Contractor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContractorVehicleNumber" EntityType="EVidentModel.Store.ContractorVehicleNumber" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContractorWasteCode" EntityType="EVidentModel.Store.ContractorWasteCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Decision" EntityType="EVidentModel.Store.Decision" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DecisionElement" EntityType="EVidentModel.Store.DecisionElement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Department" EntityType="EVidentModel.Store.Department" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DepartmentVehicleNumber" EntityType="EVidentModel.Store.DepartmentVehicleNumber" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="District" EntityType="EVidentModel.Store.District" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DprDpo" EntityType="EVidentModel.Store.DprDpo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DprDpoElement" EntityType="EVidentModel.Store.DprDpoElement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Error" EntityType="EVidentModel.Store.Error" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Installation" EntityType="EVidentModel.Store.Installation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InstallationKind" EntityType="EVidentModel.Store.InstallationKind" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InstallationProcessingMethod" EntityType="EVidentModel.Store.InstallationProcessingMethod" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InstallationWasteCode" EntityType="EVidentModel.Store.InstallationWasteCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PackageKind" EntityType="EVidentModel.Store.PackageKind" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Period" EntityType="EVidentModel.Store.Period" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProcessingMethod" EntityType="EVidentModel.Store.ProcessingMethod" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Province" EntityType="EVidentModel.Store.Province" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecyclingKind" EntityType="EVidentModel.Store.RecyclingKind" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WasteCode" EntityType="EVidentModel.Store.WasteCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WasteRecordCard" EntityType="EVidentModel.Store.WasteRecordCard" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WasteRecordCardElement" EntityType="EVidentModel.Store.WasteRecordCardElement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WasteTransferCard" EntityType="EVidentModel.Store.WasteTransferCard" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZseieCode" EntityType="EVidentModel.Store.ZseieCode" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Commune_District" Association="EVidentModel.Store.FK_Commune_District">
+      <End Role="District" EntitySet="District" />
+      <End Role="Commune" EntitySet="Commune" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Commune" Association="EVidentModel.Store.FK_Company_Commune">
+      <End Role="Commune" EntitySet="Commune" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyPkd_Company" Association="EVidentModel.Store.FK_CompanyPkd_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyPkd" EntitySet="CompanyPkd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyRight_Company" Association="EVidentModel.Store.FK_CompanyRight_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyRight" EntitySet="CompanyRight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contractor_Commune" Association="EVidentModel.Store.FK_Contractor_Commune">
+      <End Role="Commune" EntitySet="Commune" />
+      <End Role="Contractor" EntitySet="Contractor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contractor_Company" Association="EVidentModel.Store.FK_Contractor_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Contractor" EntitySet="Contractor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractorVehicleNumber_Contractor" Association="EVidentModel.Store.FK_ContractorVehicleNumber_Contractor">
+      <End Role="Contractor" EntitySet="Contractor" />
+      <End Role="ContractorVehicleNumber" EntitySet="ContractorVehicleNumber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractorWasteCode_Contractor" Association="EVidentModel.Store.FK_ContractorWasteCode_Contractor">
+      <End Role="Contractor" EntitySet="Contractor" />
+      <End Role="ContractorWasteCode" EntitySet="ContractorWasteCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractorWasteCode_WasteCode" Association="EVidentModel.Store.FK_ContractorWasteCode_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCode" />
+      <End Role="ContractorWasteCode" EntitySet="ContractorWasteCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Decision_Department" Association="EVidentModel.Store.FK_Decision_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Decision" EntitySet="Decision" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_Decision" Association="EVidentModel.Store.FK_DecisionElement_Decision">
+      <End Role="Decision" EntitySet="Decision" />
+      <End Role="DecisionElement" EntitySet="DecisionElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_Installation" Association="EVidentModel.Store.FK_DecisionElement_Installation">
+      <End Role="Installation" EntitySet="Installation" />
+      <End Role="DecisionElement" EntitySet="DecisionElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_Installation1" Association="EVidentModel.Store.FK_DecisionElement_Installation1">
+      <End Role="Installation" EntitySet="Installation" />
+      <End Role="DecisionElement" EntitySet="DecisionElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_Installation2" Association="EVidentModel.Store.FK_DecisionElement_Installation2">
+      <End Role="Installation" EntitySet="Installation" />
+      <End Role="DecisionElement" EntitySet="DecisionElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_ProcessingMethod" Association="EVidentModel.Store.FK_DecisionElement_ProcessingMethod">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethod" />
+      <End Role="DecisionElement" EntitySet="DecisionElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_ProcessingMethod1" Association="EVidentModel.Store.FK_DecisionElement_ProcessingMethod1">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethod" />
+      <End Role="DecisionElement" EntitySet="DecisionElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_WasteCode" Association="EVidentModel.Store.FK_DecisionElement_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCode" />
+      <End Role="DecisionElement" EntitySet="DecisionElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Commune" Association="EVidentModel.Store.FK_Department_Commune">
+      <End Role="Commune" EntitySet="Commune" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Company" Association="EVidentModel.Store.FK_Department_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentVehicleNumber_Department" Association="EVidentModel.Store.FK_DepartmentVehicleNumber_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="DepartmentVehicleNumber" EntitySet="DepartmentVehicleNumber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_District_Province" Association="EVidentModel.Store.FK_District_Province">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="District" EntitySet="District" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpo_Contractor" Association="EVidentModel.Store.FK_DprDpo_Contractor">
+      <End Role="Contractor" EntitySet="Contractor" />
+      <End Role="DprDpo" EntitySet="DprDpo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpo_Department" Association="EVidentModel.Store.FK_DprDpo_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="DprDpo" EntitySet="DprDpo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpo_Period" Association="EVidentModel.Store.FK_DprDpo_Period">
+      <End Role="Period" EntitySet="Period" />
+      <End Role="DprDpo" EntitySet="DprDpo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_DprDpo" Association="EVidentModel.Store.FK_DprDpoElement_DprDpo">
+      <End Role="DprDpo" EntitySet="DprDpo" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_PackageKind" Association="EVidentModel.Store.FK_DprDpoElement_PackageKind">
+      <End Role="PackageKind" EntitySet="PackageKind" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_ProcessingMethod" Association="EVidentModel.Store.FK_DprDpoElement_ProcessingMethod">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethod" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_RecyclingKind" Association="EVidentModel.Store.FK_DprDpoElement_RecyclingKind">
+      <End Role="RecyclingKind" EntitySet="RecyclingKind" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_WasteCode" Association="EVidentModel.Store.FK_DprDpoElement_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCode" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_Department" Association="EVidentModel.Store.FK_Installation_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Installation" EntitySet="Installation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_InstallationKind" Association="EVidentModel.Store.FK_Installation_InstallationKind">
+      <End Role="InstallationKind" EntitySet="InstallationKind" />
+      <End Role="Installation" EntitySet="Installation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_InstallationProcessingMethod" Association="EVidentModel.Store.FK_Installation_InstallationProcessingMethod">
+      <End Role="InstallationProcessingMethod" EntitySet="InstallationProcessingMethod" />
+      <End Role="Installation" EntitySet="Installation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstallationWasteCode_Installation" Association="EVidentModel.Store.FK_InstallationWasteCode_Installation">
+      <End Role="Installation" EntitySet="Installation" />
+      <End Role="InstallationWasteCode" EntitySet="InstallationWasteCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstallationWasteCode_WasteCode" Association="EVidentModel.Store.FK_InstallationWasteCode_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCode" />
+      <End Role="InstallationWasteCode" EntitySet="InstallationWasteCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCard_Department" Association="EVidentModel.Store.FK_WasteRecordCard_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCard_Period" Association="EVidentModel.Store.FK_WasteRecordCard_Period">
+      <End Role="Period" EntitySet="Period" />
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCard_WasteCode" Association="EVidentModel.Store.FK_WasteRecordCard_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCode" />
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_Commune" Association="EVidentModel.Store.FK_WasteRecordCardElement_Commune">
+      <End Role="Commune" EntitySet="Commune" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_Contractor" Association="EVidentModel.Store.FK_WasteRecordCardElement_Contractor">
+      <End Role="Contractor" EntitySet="Contractor" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ContractorVehicleNumber" Association="EVidentModel.Store.FK_WasteRecordCardElement_ContractorVehicleNumber">
+      <End Role="ContractorVehicleNumber" EntitySet="ContractorVehicleNumber" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_DepartmentVehicleNumber" Association="EVidentModel.Store.FK_WasteRecordCardElement_DepartmentVehicleNumber">
+      <End Role="DepartmentVehicleNumber" EntitySet="DepartmentVehicleNumber" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_Installation" Association="EVidentModel.Store.FK_WasteRecordCardElement_Installation">
+      <End Role="Installation" EntitySet="Installation" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ProcessingMethod" Association="EVidentModel.Store.FK_WasteRecordCardElement_ProcessingMethod">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethod" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ProcessingMethod1" Association="EVidentModel.Store.FK_WasteRecordCardElement_ProcessingMethod1">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethod" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_WasteRecordCard" Association="EVidentModel.Store.FK_WasteRecordCardElement_WasteRecordCard">
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCard" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_WasteTransferCard" Association="EVidentModel.Store.FK_WasteRecordCardElement_WasteTransferCard">
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCard" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ZseieCode" Association="EVidentModel.Store.FK_WasteRecordCardElement_ZseieCode">
+      <End Role="ZseieCode" EntitySet="ZseieCode" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ZseieCodeKind" Association="EVidentModel.Store.FK_WasteRecordCardElement_ZseieCodeKind">
+      <End Role="ZseieCode" EntitySet="ZseieCode" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteTransferCard_Contractor" Association="EVidentModel.Store.FK_WasteTransferCard_Contractor">
+      <End Role="Contractor" EntitySet="Contractor" />
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteTransferCard_ProcessingMethod" Association="EVidentModel.Store.FK_WasteTransferCard_ProcessingMethod">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethod" />
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteTransferCard_TransportContractor" Association="EVidentModel.Store.FK_WasteTransferCard_TransportContractor">
+      <End Role="Contractor" EntitySet="Contractor" />
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteTransferCard_WasteRecordCard" Association="EVidentModel.Store.FK_WasteTransferCard_WasteRecordCard">
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCard" />
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCard" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AddressBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PostCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fax" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HomeSite" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kind" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Commune">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DistrictId" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PasswordHash" Type="varbinary" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RegisterNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CommuneId" Type="bigint" Nullable="false" />
+    <Property Name="Place" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BuildingNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlatNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PostCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Regon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fax" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="BusinessFirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BusinessLastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BusinessPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BusinessFax" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BusinessEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GIOSRegisterNumber" Type="nchar" MaxLength="7" />
+    <Property Name="IsSellingElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsRecoveringElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsCollectingElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsProcessingElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsRecyclingElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsSomeElseElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsSellingBattery" Type="bit" Nullable="false" />
+    <Property Name="IsProcessingBattery" Type="bit" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CompanyPkd">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="bigint" Nullable="false" />
+    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CompanyRight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="bigint" Nullable="false" />
+    <Property Name="VirtualPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Configuration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Contractor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="bigint" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CommuneId" Type="bigint" Nullable="false" />
+    <Property Name="PostCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Place" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BuildingNumber" Type="nvarchar(max)" />
+    <Property Name="FlatNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Regon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fax" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RegisterNumber" Type="nchar" MaxLength="7" />
+    <Property Name="IsSellingElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsRecoveringElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsCollectingElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsProcessingElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsRecyclingElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsSomeElseElectronics" Type="bit" Nullable="false" />
+    <Property Name="IsSellingBattery" Type="bit" Nullable="false" />
+    <Property Name="IsProcessingBattery" Type="bit" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ContractorVehicleNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ContractorId" Type="bigint" Nullable="false" />
+    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ContractorWasteCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ContractorId" Type="bigint" Nullable="false" />
+    <Property Name="WasteCodeId" Type="bigint" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Decision">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentId" Type="bigint" Nullable="false" />
+    <Property Name="Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReleaseDate" Type="datetime" Nullable="false" />
+    <Property Name="ReleaseAuthority" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ValidFrom" Type="datetime" Nullable="false" />
+    <Property Name="ValidTo" Type="datetime" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="DecisionElement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DecisionId" Type="bigint" Nullable="false" />
+    <Property Name="WasteCodeId" Type="bigint" Nullable="false" />
+    <Property Name="CreatedLimit" Type="float" Nullable="false" />
+    <Property Name="CreatedPgo" Type="bit" Nullable="false" />
+    <Property Name="CreatedInstallationId" Type="bigint" />
+    <Property Name="RecycledLimit" Type="float" Nullable="false" />
+    <Property Name="RecycledMethodId" Type="bigint" />
+    <Property Name="RecycledInstallationId" Type="bigint" />
+    <Property Name="DestroyedLimit" Type="float" Nullable="false" />
+    <Property Name="DestroyedMethodId" Type="bigint" />
+    <Property Name="DestroyedInstallationId" Type="bigint" />
+    <Property Name="CanCollect" Type="bit" Nullable="false" />
+    <Property Name="CanTransport" Type="bit" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="bigint" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CommuneId" Type="bigint" Nullable="false" />
+    <Property Name="PostCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Place" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BuildingNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlatNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fax" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="IsMain" Type="bit" Nullable="false" />
+    <Property Name="IsZSEiE" Type="bit" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DepartmentVehicleNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentId" Type="bigint" Nullable="false" />
+    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceId" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DprDpo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentId" Type="bigint" Nullable="false" />
+    <Property Name="PeriodId" Type="bigint" Nullable="false" />
+    <Property Name="ContractorId" Type="bigint" Nullable="false" />
+    <Property Name="DprNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DpoNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DprDpoElement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DprDpoId" Type="bigint" Nullable="false" />
+    <Property Name="WasteCodeId" Type="bigint" Nullable="false" />
+    <Property Name="ReceivedMass" Type="float" Nullable="false" />
+    <Property Name="RecycledMass" Type="float" Nullable="false" />
+    <Property Name="ProcessingMethodId" Type="bigint" Nullable="false" />
+    <Property Name="RecyclingKindId" Type="bigint" Nullable="false" />
+    <Property Name="PackageKindId" Type="bigint" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Error">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Installation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentId" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProcessingCapacity" Type="float" Nullable="false" />
+    <Property Name="ProcessingLimit" Type="float" Nullable="false" />
+    <Property Name="InstallationKindId" Type="bigint" Nullable="false" />
+    <Property Name="InstallationProcessingMethodId" Type="bigint" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InstallationKind">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InstallationProcessingMethod">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InstallationWasteCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InstallationId" Type="bigint" Nullable="false" />
+    <Property Name="WasteCodeId" Type="bigint" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PackageKind">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Index" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Period">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="DateFrom" Type="datetime" Nullable="false" />
+    <Property Name="DateTo" Type="datetime" Nullable="false" />
+    <Property Name="IsMain" Type="bit" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProcessingMethod">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kind" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RecyclingKind">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kind" Type="int" Nullable="false" />
+    <Property Name="Index" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WasteCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="RequireDryMass" Type="bit" Nullable="false" />
+    <Property Name="IsBattery" Type="bit" Nullable="false" />
+    <Property Name="IsZseie" Type="bit" Nullable="false" />
+    <Property Name="IsDangerous" Type="bit" Nullable="false" />
+    <Property Name="IsRemovable" Type="bit" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WasteRecordCard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentId" Type="bigint" Nullable="false" />
+    <Property Name="WasteCodeId" Type="bigint" Nullable="false" />
+    <Property Name="Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PeriodId" Type="bigint" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WasteRecordCardElement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WasteRecordCardId" Type="bigint" Nullable="false" />
+    <Property Name="WasteTransferCardId" Type="bigint" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="CreatedMass" Type="float" Nullable="false" />
+    <Property Name="CreatedDryMass" Type="float" Nullable="false" />
+    <Property Name="ReceivedMass" Type="float" Nullable="false" />
+    <Property Name="ReceivedDryMass" Type="float" Nullable="false" />
+    <Property Name="ReceivedCardNumber" Type="nvarchar(max)" />
+    <Property Name="ReceivedForRecyclingOrDestruction" Type="bit" Nullable="false" />
+    <Property Name="ManageMass" Type="float" Nullable="false" />
+    <Property Name="ManageDryMass" Type="float" Nullable="false" />
+    <Property Name="ManageProcessingMethodId" Type="bigint" />
+    <Property Name="ManageLp" Type="nvarchar(max)" />
+    <Property Name="ManageInstallationId" Type="bigint" />
+    <Property Name="TransferMass" Type="float" Nullable="false" />
+    <Property Name="TransferDryMass" Type="float" Nullable="false" />
+    <Property Name="TransferProcessingMethodId" Type="bigint" />
+    <Property Name="ZseieCodeId" Type="bigint" />
+    <Property Name="ZseieKind" Type="bigint" />
+    <Property Name="IsBatteryFromCar" Type="bit" Nullable="false" />
+    <Property Name="IsPositive" Type="bit" Nullable="false" />
+    <Property Name="Kind" Type="int" Nullable="false" />
+    <Property Name="ContractorVehicleNumberId" Type="bigint" />
+    <Property Name="DepartmentVehicleNumberId" Type="bigint" />
+    <Property Name="IsFromHome" Type="bit" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="PESEL" Type="nvarchar(max)" />
+    <Property Name="DocID" Type="nvarchar(max)" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="Source" Type="nvarchar(max)" />
+    <Property Name="SourceKind" Type="nvarchar(max)" />
+    <Property Name="AddrLineA" Type="nvarchar(max)" />
+    <Property Name="AddrLineB" Type="nvarchar(max)" />
+    <Property Name="PartNumber" Type="int" />
+    <Property Name="PgoCommuneId" Type="bigint" />
+    <Property Name="PgoContractorId" Type="bigint" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WasteTransferCard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ContractorId" Type="bigint" Nullable="false" />
+    <Property Name="TransportContractorId" Type="bigint" />
+    <Property Name="WasteRecordCardId" Type="bigint" Nullable="false" />
+    <Property Name="WasteDestination" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsCollection" Type="bit" Nullable="false" />
+    <Property Name="DPOrequired" Type="bit" Nullable="false" />
+    <Property Name="TransportKind" Type="int" Nullable="false" />
+    <Property Name="TransportVehicleNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransferCardNumber" Type="nvarchar(max)" />
+    <Property Name="TimeStamp" Type="datetime2" />
+    <Property Name="ProcessingMethodId" Type="bigint" />
+    <Property Name="Kind" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZseieCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Commune_District">
+    <End Role="District" Type="EVidentModel.Store.District" Multiplicity="1" />
+    <End Role="Commune" Type="EVidentModel.Store.Commune" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Commune">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Commune">
+    <End Role="Commune" Type="EVidentModel.Store.Commune" Multiplicity="1" />
+    <End Role="Company" Type="EVidentModel.Store.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commune">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="CommuneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyPkd_Company">
+    <End Role="Company" Type="EVidentModel.Store.Company" Multiplicity="1" />
+    <End Role="CompanyPkd" Type="EVidentModel.Store.CompanyPkd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompanyPkd">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyRight_Company">
+    <End Role="Company" Type="EVidentModel.Store.Company" Multiplicity="1" />
+    <End Role="CompanyRight" Type="EVidentModel.Store.CompanyRight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompanyRight">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contractor_Commune">
+    <End Role="Commune" Type="EVidentModel.Store.Commune" Multiplicity="1" />
+    <End Role="Contractor" Type="EVidentModel.Store.Contractor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commune">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contractor">
+        <PropertyRef Name="CommuneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contractor_Company">
+    <End Role="Company" Type="EVidentModel.Store.Company" Multiplicity="1" />
+    <End Role="Contractor" Type="EVidentModel.Store.Contractor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contractor">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractorVehicleNumber_Contractor">
+    <End Role="Contractor" Type="EVidentModel.Store.Contractor" Multiplicity="1" />
+    <End Role="ContractorVehicleNumber" Type="EVidentModel.Store.ContractorVehicleNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contractor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractorVehicleNumber">
+        <PropertyRef Name="ContractorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractorWasteCode_Contractor">
+    <End Role="Contractor" Type="EVidentModel.Store.Contractor" Multiplicity="1" />
+    <End Role="ContractorWasteCode" Type="EVidentModel.Store.ContractorWasteCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contractor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractorWasteCode">
+        <PropertyRef Name="ContractorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractorWasteCode_WasteCode">
+    <End Role="WasteCode" Type="EVidentModel.Store.WasteCode" Multiplicity="1" />
+    <End Role="ContractorWasteCode" Type="EVidentModel.Store.ContractorWasteCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WasteCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractorWasteCode">
+        <PropertyRef Name="WasteCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Decision_Department">
+    <End Role="Department" Type="EVidentModel.Store.Department" Multiplicity="1" />
+    <End Role="Decision" Type="EVidentModel.Store.Decision" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Decision">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DecisionElement_Decision">
+    <End Role="Decision" Type="EVidentModel.Store.Decision" Multiplicity="1" />
+    <End Role="DecisionElement" Type="EVidentModel.Store.DecisionElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Decision">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DecisionElement">
+        <PropertyRef Name="DecisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DecisionElement_Installation">
+    <End Role="Installation" Type="EVidentModel.Store.Installation" Multiplicity="0..1" />
+    <End Role="DecisionElement" Type="EVidentModel.Store.DecisionElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Installation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DecisionElement">
+        <PropertyRef Name="CreatedInstallationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DecisionElement_Installation1">
+    <End Role="Installation" Type="EVidentModel.Store.Installation" Multiplicity="0..1" />
+    <End Role="DecisionElement" Type="EVidentModel.Store.DecisionElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Installation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DecisionElement">
+        <PropertyRef Name="RecycledInstallationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DecisionElement_Installation2">
+    <End Role="Installation" Type="EVidentModel.Store.Installation" Multiplicity="0..1" />
+    <End Role="DecisionElement" Type="EVidentModel.Store.DecisionElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Installation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DecisionElement">
+        <PropertyRef Name="DestroyedInstallationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DecisionElement_ProcessingMethod">
+    <End Role="ProcessingMethod" Type="EVidentModel.Store.ProcessingMethod" Multiplicity="0..1" />
+    <End Role="DecisionElement" Type="EVidentModel.Store.DecisionElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProcessingMethod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DecisionElement">
+        <PropertyRef Name="RecycledMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DecisionElement_ProcessingMethod1">
+    <End Role="ProcessingMethod" Type="EVidentModel.Store.ProcessingMethod" Multiplicity="0..1" />
+    <End Role="DecisionElement" Type="EVidentModel.Store.DecisionElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProcessingMethod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DecisionElement">
+        <PropertyRef Name="DestroyedMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DecisionElement_WasteCode">
+    <End Role="WasteCode" Type="EVidentModel.Store.WasteCode" Multiplicity="1" />
+    <End Role="DecisionElement" Type="EVidentModel.Store.DecisionElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WasteCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DecisionElement">
+        <PropertyRef Name="WasteCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Commune">
+    <End Role="Commune" Type="EVidentModel.Store.Commune" Multiplicity="1" />
+    <End Role="Department" Type="EVidentModel.Store.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commune">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="CommuneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Company">
+    <End Role="Company" Type="EVidentModel.Store.Company" Multiplicity="1" />
+    <End Role="Department" Type="EVidentModel.Store.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentVehicleNumber_Department">
+    <End Role="Department" Type="EVidentModel.Store.Department" Multiplicity="1" />
+    <End Role="DepartmentVehicleNumber" Type="EVidentModel.Store.DepartmentVehicleNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DepartmentVehicleNumber">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_District_Province">
+    <End Role="Province" Type="EVidentModel.Store.Province" Multiplicity="1" />
+    <End Role="District" Type="EVidentModel.Store.District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DprDpo_Contractor">
+    <End Role="Contractor" Type="EVidentModel.Store.Contractor" Multiplicity="1" />
+    <End Role="DprDpo" Type="EVidentModel.Store.DprDpo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contractor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DprDpo">
+        <PropertyRef Name="ContractorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DprDpo_Department">
+    <End Role="Department" Type="EVidentModel.Store.Department" Multiplicity="1" />
+    <End Role="DprDpo" Type="EVidentModel.Store.DprDpo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DprDpo">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DprDpo_Period">
+    <End Role="Period" Type="EVidentModel.Store.Period" Multiplicity="1" />
+    <End Role="DprDpo" Type="EVidentModel.Store.DprDpo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Period">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DprDpo">
+        <PropertyRef Name="PeriodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DprDpoElement_DprDpo">
+    <End Role="DprDpo" Type="EVidentModel.Store.DprDpo" Multiplicity="1" />
+    <End Role="DprDpoElement" Type="EVidentModel.Store.DprDpoElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DprDpo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DprDpoElement">
+        <PropertyRef Name="DprDpoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DprDpoElement_PackageKind">
+    <End Role="PackageKind" Type="EVidentModel.Store.PackageKind" Multiplicity="1" />
+    <End Role="DprDpoElement" Type="EVidentModel.Store.DprDpoElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PackageKind">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DprDpoElement">
+        <PropertyRef Name="PackageKindId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DprDpoElement_ProcessingMethod">
+    <End Role="ProcessingMethod" Type="EVidentModel.Store.ProcessingMethod" Multiplicity="1" />
+    <End Role="DprDpoElement" Type="EVidentModel.Store.DprDpoElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProcessingMethod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DprDpoElement">
+        <PropertyRef Name="ProcessingMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DprDpoElement_RecyclingKind">
+    <End Role="RecyclingKind" Type="EVidentModel.Store.RecyclingKind" Multiplicity="1" />
+    <End Role="DprDpoElement" Type="EVidentModel.Store.DprDpoElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecyclingKind">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DprDpoElement">
+        <PropertyRef Name="RecyclingKindId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DprDpoElement_WasteCode">
+    <End Role="WasteCode" Type="EVidentModel.Store.WasteCode" Multiplicity="1" />
+    <End Role="DprDpoElement" Type="EVidentModel.Store.DprDpoElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WasteCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DprDpoElement">
+        <PropertyRef Name="WasteCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installation_Department">
+    <End Role="Department" Type="EVidentModel.Store.Department" Multiplicity="1" />
+    <End Role="Installation" Type="EVidentModel.Store.Installation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Installation">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installation_InstallationKind">
+    <End Role="InstallationKind" Type="EVidentModel.Store.InstallationKind" Multiplicity="1" />
+    <End Role="Installation" Type="EVidentModel.Store.Installation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstallationKind">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Installation">
+        <PropertyRef Name="InstallationKindId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installation_InstallationProcessingMethod">
+    <End Role="InstallationProcessingMethod" Type="EVidentModel.Store.InstallationProcessingMethod" Multiplicity="0..1" />
+    <End Role="Installation" Type="EVidentModel.Store.Installation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstallationProcessingMethod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Installation">
+        <PropertyRef Name="InstallationProcessingMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstallationWasteCode_Installation">
+    <End Role="Installation" Type="EVidentModel.Store.Installation" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InstallationWasteCode" Type="EVidentModel.Store.InstallationWasteCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Installation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InstallationWasteCode">
+        <PropertyRef Name="InstallationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstallationWasteCode_WasteCode">
+    <End Role="WasteCode" Type="EVidentModel.Store.WasteCode" Multiplicity="1" />
+    <End Role="InstallationWasteCode" Type="EVidentModel.Store.InstallationWasteCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WasteCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InstallationWasteCode">
+        <PropertyRef Name="WasteCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCard_Department">
+    <End Role="Department" Type="EVidentModel.Store.Department" Multiplicity="1" />
+    <End Role="WasteRecordCard" Type="EVidentModel.Store.WasteRecordCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCard">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCard_Period">
+    <End Role="Period" Type="EVidentModel.Store.Period" Multiplicity="1" />
+    <End Role="WasteRecordCard" Type="EVidentModel.Store.WasteRecordCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Period">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCard">
+        <PropertyRef Name="PeriodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCard_WasteCode">
+    <End Role="WasteCode" Type="EVidentModel.Store.WasteCode" Multiplicity="1" />
+    <End Role="WasteRecordCard" Type="EVidentModel.Store.WasteRecordCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WasteCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCard">
+        <PropertyRef Name="WasteCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_Commune">
+    <End Role="Commune" Type="EVidentModel.Store.Commune" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commune">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="PgoCommuneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_Contractor">
+    <End Role="Contractor" Type="EVidentModel.Store.Contractor" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contractor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="PgoContractorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ContractorVehicleNumber">
+    <End Role="ContractorVehicleNumber" Type="EVidentModel.Store.ContractorVehicleNumber" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContractorVehicleNumber">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="ContractorVehicleNumberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_DepartmentVehicleNumber">
+    <End Role="DepartmentVehicleNumber" Type="EVidentModel.Store.DepartmentVehicleNumber" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentVehicleNumber">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="DepartmentVehicleNumberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_Installation">
+    <End Role="Installation" Type="EVidentModel.Store.Installation" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Installation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="ManageInstallationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ProcessingMethod">
+    <End Role="ProcessingMethod" Type="EVidentModel.Store.ProcessingMethod" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProcessingMethod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="ManageProcessingMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ProcessingMethod1">
+    <End Role="ProcessingMethod" Type="EVidentModel.Store.ProcessingMethod" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProcessingMethod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="TransferProcessingMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_WasteRecordCard">
+    <End Role="WasteRecordCard" Type="EVidentModel.Store.WasteRecordCard" Multiplicity="1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WasteRecordCard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="WasteRecordCardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_WasteTransferCard">
+    <End Role="WasteTransferCard" Type="EVidentModel.Store.WasteTransferCard" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WasteTransferCard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="WasteTransferCardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ZseieCode">
+    <End Role="ZseieCode" Type="EVidentModel.Store.ZseieCode" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZseieCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="ZseieCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ZseieCodeKind">
+    <End Role="ZseieCode" Type="EVidentModel.Store.ZseieCode" Multiplicity="0..1" />
+    <End Role="WasteRecordCardElement" Type="EVidentModel.Store.WasteRecordCardElement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZseieCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteRecordCardElement">
+        <PropertyRef Name="ZseieKind" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteTransferCard_Contractor">
+    <End Role="Contractor" Type="EVidentModel.Store.Contractor" Multiplicity="1" />
+    <End Role="WasteTransferCard" Type="EVidentModel.Store.WasteTransferCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contractor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteTransferCard">
+        <PropertyRef Name="ContractorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteTransferCard_ProcessingMethod">
+    <End Role="ProcessingMethod" Type="EVidentModel.Store.ProcessingMethod" Multiplicity="0..1" />
+    <End Role="WasteTransferCard" Type="EVidentModel.Store.WasteTransferCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProcessingMethod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteTransferCard">
+        <PropertyRef Name="ProcessingMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteTransferCard_TransportContractor">
+    <End Role="Contractor" Type="EVidentModel.Store.Contractor" Multiplicity="0..1" />
+    <End Role="WasteTransferCard" Type="EVidentModel.Store.WasteTransferCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contractor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteTransferCard">
+        <PropertyRef Name="TransportContractorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WasteTransferCard_WasteRecordCard">
+    <End Role="WasteRecordCard" Type="EVidentModel.Store.WasteRecordCard" Multiplicity="1" />
+    <End Role="WasteTransferCard" Type="EVidentModel.Store.WasteTransferCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WasteRecordCard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WasteTransferCard">
+        <PropertyRef Name="WasteRecordCardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,22 @@
+Trying to change property 'svn:ignore'
+but the property has already been locally changed to a different value.
+Local property value:
+EVident.6.0.ReSharper.user
+EVident.csproj
+EVident.csproj.user
+EVident.sln
+_ReSharper.EVident
+bin
+obj
+
+Incoming property value:
+EVident.csproj
+EVident.csproj.user
+EVident.sln
+EVident.suo
+EVidentDataModel.Designer.cs
+EVidentDataModel.edmx
+_ToDo.txt
+bin
+obj
+

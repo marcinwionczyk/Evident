@@ -1,0 +1,931 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EVidentModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+  <EntityContainer Name="EVidentDataModel">
+    <EntitySet Name="AddressBooks" EntityType="EVidentModel.AddressBook" />
+    <EntitySet Name="Communes" EntityType="EVidentModel.Commune" />
+    <EntitySet Name="Companies" EntityType="EVidentModel.Company" />
+    <EntitySet Name="CompanyPkds" EntityType="EVidentModel.CompanyPkd" />
+    <EntitySet Name="CompanyRights" EntityType="EVidentModel.CompanyRight" />
+    <EntitySet Name="Configurations" EntityType="EVidentModel.Configuration" />
+    <EntitySet Name="Contractors" EntityType="EVidentModel.Contractor" />
+    <EntitySet Name="ContractorVehicleNumbers" EntityType="EVidentModel.ContractorVehicleNumber" />
+    <EntitySet Name="ContractorWasteCodes" EntityType="EVidentModel.ContractorWasteCode" />
+    <EntitySet Name="Decisions" EntityType="EVidentModel.Decision" />
+    <EntitySet Name="DecisionElements" EntityType="EVidentModel.DecisionElement" />
+    <EntitySet Name="Departments" EntityType="EVidentModel.Department" />
+    <EntitySet Name="DepartmentVehicleNumbers" EntityType="EVidentModel.DepartmentVehicleNumber" />
+    <EntitySet Name="Districts" EntityType="EVidentModel.District" />
+    <EntitySet Name="DprDpoes" EntityType="EVidentModel.DprDpo" />
+    <EntitySet Name="DprDpoElements" EntityType="EVidentModel.DprDpoElement" />
+    <EntitySet Name="Errors" EntityType="EVidentModel.Error" />
+    <EntitySet Name="Installations" EntityType="EVidentModel.Installation" />
+    <EntitySet Name="InstallationKinds" EntityType="EVidentModel.InstallationKind" />
+    <EntitySet Name="InstallationProcessingMethods" EntityType="EVidentModel.InstallationProcessingMethod" />
+    <EntitySet Name="InstallationWasteCodes" EntityType="EVidentModel.InstallationWasteCode" />
+    <EntitySet Name="PackageKinds" EntityType="EVidentModel.PackageKind" />
+    <EntitySet Name="Periods" EntityType="EVidentModel.Period" />
+    <EntitySet Name="ProcessingMethods" EntityType="EVidentModel.ProcessingMethod" />
+    <EntitySet Name="Provinces" EntityType="EVidentModel.Province" />
+    <EntitySet Name="RecyclingKinds" EntityType="EVidentModel.RecyclingKind" />
+    <EntitySet Name="WasteCodes" EntityType="EVidentModel.WasteCode" />
+    <EntitySet Name="WasteRecordCards" EntityType="EVidentModel.WasteRecordCard" />
+    <EntitySet Name="WasteRecordCardElements" EntityType="EVidentModel.WasteRecordCardElement" />
+    <EntitySet Name="WasteTransferCards" EntityType="EVidentModel.WasteTransferCard" />
+    <EntitySet Name="ZseieCodes" EntityType="EVidentModel.ZseieCode" />
+    <AssociationSet Name="FK_Commune_District" Association="EVidentModel.FK_Commune_District">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="Commune" EntitySet="Communes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Commune" Association="EVidentModel.FK_Company_Commune">
+      <End Role="Commune" EntitySet="Communes" />
+      <End Role="Company" EntitySet="Companies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contractor_Commune" Association="EVidentModel.FK_Contractor_Commune">
+      <End Role="Commune" EntitySet="Communes" />
+      <End Role="Contractor" EntitySet="Contractors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Commune" Association="EVidentModel.FK_Department_Commune">
+      <End Role="Commune" EntitySet="Communes" />
+      <End Role="Department" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_Commune" Association="EVidentModel.FK_WasteRecordCardElement_Commune">
+      <End Role="Commune" EntitySet="Communes" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyPkd_Company" Association="EVidentModel.FK_CompanyPkd_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="CompanyPkd" EntitySet="CompanyPkds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyRight_Company" Association="EVidentModel.FK_CompanyRight_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="CompanyRight" EntitySet="CompanyRights" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contractor_Company" Association="EVidentModel.FK_Contractor_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Contractor" EntitySet="Contractors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Company" Association="EVidentModel.FK_Department_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Department" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractorVehicleNumber_Contractor" Association="EVidentModel.FK_ContractorVehicleNumber_Contractor">
+      <End Role="Contractor" EntitySet="Contractors" />
+      <End Role="ContractorVehicleNumber" EntitySet="ContractorVehicleNumbers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractorWasteCode_Contractor" Association="EVidentModel.FK_ContractorWasteCode_Contractor">
+      <End Role="Contractor" EntitySet="Contractors" />
+      <End Role="ContractorWasteCode" EntitySet="ContractorWasteCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpo_Contractor" Association="EVidentModel.FK_DprDpo_Contractor">
+      <End Role="Contractor" EntitySet="Contractors" />
+      <End Role="DprDpo" EntitySet="DprDpoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_Contractor" Association="EVidentModel.FK_WasteRecordCardElement_Contractor">
+      <End Role="Contractor" EntitySet="Contractors" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteTransferCard_Contractor" Association="EVidentModel.FK_WasteTransferCard_Contractor">
+      <End Role="Contractor" EntitySet="Contractors" />
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteTransferCard_TransportContractor" Association="EVidentModel.FK_WasteTransferCard_TransportContractor">
+      <End Role="Contractor" EntitySet="Contractors" />
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ContractorVehicleNumber" Association="EVidentModel.FK_WasteRecordCardElement_ContractorVehicleNumber">
+      <End Role="ContractorVehicleNumber" EntitySet="ContractorVehicleNumbers" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractorWasteCode_WasteCode" Association="EVidentModel.FK_ContractorWasteCode_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCodes" />
+      <End Role="ContractorWasteCode" EntitySet="ContractorWasteCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Decision_Department" Association="EVidentModel.FK_Decision_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Decision" EntitySet="Decisions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_Decision" Association="EVidentModel.FK_DecisionElement_Decision">
+      <End Role="Decision" EntitySet="Decisions" />
+      <End Role="DecisionElement" EntitySet="DecisionElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_Installation" Association="EVidentModel.FK_DecisionElement_Installation">
+      <End Role="Installation" EntitySet="Installations" />
+      <End Role="DecisionElement" EntitySet="DecisionElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_Installation1" Association="EVidentModel.FK_DecisionElement_Installation1">
+      <End Role="Installation" EntitySet="Installations" />
+      <End Role="DecisionElement" EntitySet="DecisionElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_Installation2" Association="EVidentModel.FK_DecisionElement_Installation2">
+      <End Role="Installation" EntitySet="Installations" />
+      <End Role="DecisionElement" EntitySet="DecisionElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_ProcessingMethod" Association="EVidentModel.FK_DecisionElement_ProcessingMethod">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethods" />
+      <End Role="DecisionElement" EntitySet="DecisionElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_ProcessingMethod1" Association="EVidentModel.FK_DecisionElement_ProcessingMethod1">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethods" />
+      <End Role="DecisionElement" EntitySet="DecisionElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DecisionElement_WasteCode" Association="EVidentModel.FK_DecisionElement_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCodes" />
+      <End Role="DecisionElement" EntitySet="DecisionElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentVehicleNumber_Department" Association="EVidentModel.FK_DepartmentVehicleNumber_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="DepartmentVehicleNumber" EntitySet="DepartmentVehicleNumbers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpo_Department" Association="EVidentModel.FK_DprDpo_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="DprDpo" EntitySet="DprDpoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_Department" Association="EVidentModel.FK_Installation_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Installation" EntitySet="Installations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCard_Department" Association="EVidentModel.FK_WasteRecordCard_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_DepartmentVehicleNumber" Association="EVidentModel.FK_WasteRecordCardElement_DepartmentVehicleNumber">
+      <End Role="DepartmentVehicleNumber" EntitySet="DepartmentVehicleNumbers" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_District_Province" Association="EVidentModel.FK_District_Province">
+      <End Role="Province" EntitySet="Provinces" />
+      <End Role="District" EntitySet="Districts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpo_Period" Association="EVidentModel.FK_DprDpo_Period">
+      <End Role="Period" EntitySet="Periods" />
+      <End Role="DprDpo" EntitySet="DprDpoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_DprDpo" Association="EVidentModel.FK_DprDpoElement_DprDpo">
+      <End Role="DprDpo" EntitySet="DprDpoes" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_PackageKind" Association="EVidentModel.FK_DprDpoElement_PackageKind">
+      <End Role="PackageKind" EntitySet="PackageKinds" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_ProcessingMethod" Association="EVidentModel.FK_DprDpoElement_ProcessingMethod">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethods" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_RecyclingKind" Association="EVidentModel.FK_DprDpoElement_RecyclingKind">
+      <End Role="RecyclingKind" EntitySet="RecyclingKinds" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DprDpoElement_WasteCode" Association="EVidentModel.FK_DprDpoElement_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCodes" />
+      <End Role="DprDpoElement" EntitySet="DprDpoElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_InstallationKind" Association="EVidentModel.FK_Installation_InstallationKind">
+      <End Role="InstallationKind" EntitySet="InstallationKinds" />
+      <End Role="Installation" EntitySet="Installations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_InstallationProcessingMethod" Association="EVidentModel.FK_Installation_InstallationProcessingMethod">
+      <End Role="InstallationProcessingMethod" EntitySet="InstallationProcessingMethods" />
+      <End Role="Installation" EntitySet="Installations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstallationWasteCode_Installation" Association="EVidentModel.FK_InstallationWasteCode_Installation">
+      <End Role="Installation" EntitySet="Installations" />
+      <End Role="InstallationWasteCode" EntitySet="InstallationWasteCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_Installation" Association="EVidentModel.FK_WasteRecordCardElement_Installation">
+      <End Role="Installation" EntitySet="Installations" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstallationWasteCode_WasteCode" Association="EVidentModel.FK_InstallationWasteCode_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCodes" />
+      <End Role="InstallationWasteCode" EntitySet="InstallationWasteCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCard_Period" Association="EVidentModel.FK_WasteRecordCard_Period">
+      <End Role="Period" EntitySet="Periods" />
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ProcessingMethod" Association="EVidentModel.FK_WasteRecordCardElement_ProcessingMethod">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethods" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ProcessingMethod1" Association="EVidentModel.FK_WasteRecordCardElement_ProcessingMethod1">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethods" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteTransferCard_ProcessingMethod" Association="EVidentModel.FK_WasteTransferCard_ProcessingMethod">
+      <End Role="ProcessingMethod" EntitySet="ProcessingMethods" />
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCard_WasteCode" Association="EVidentModel.FK_WasteRecordCard_WasteCode">
+      <End Role="WasteCode" EntitySet="WasteCodes" />
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_WasteRecordCard" Association="EVidentModel.FK_WasteRecordCardElement_WasteRecordCard">
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCards" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteTransferCard_WasteRecordCard" Association="EVidentModel.FK_WasteTransferCard_WasteRecordCard">
+      <End Role="WasteRecordCard" EntitySet="WasteRecordCards" />
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_WasteTransferCard" Association="EVidentModel.FK_WasteRecordCardElement_WasteTransferCard">
+      <End Role="WasteTransferCard" EntitySet="WasteTransferCards" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ZseieCode" Association="EVidentModel.FK_WasteRecordCardElement_ZseieCode">
+      <End Role="ZseieCode" EntitySet="ZseieCodes" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WasteRecordCardElement_ZseieCodeKind" Association="EVidentModel.FK_WasteRecordCardElement_ZseieCodeKind">
+      <End Role="ZseieCode" EntitySet="ZseieCodes" />
+      <End Role="WasteRecordCardElement" EntitySet="WasteRecordCardElements" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AddressBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Street" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PostCode" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HomeSite" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Kind" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+  </EntityType>
+  <EntityType Name="Commune">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="District" Relationship="EVidentModel.FK_Commune_District" FromRole="Commune" ToRole="District" />
+    <NavigationProperty Name="Companies" Relationship="EVidentModel.FK_Company_Commune" FromRole="Commune" ToRole="Company" />
+    <NavigationProperty Name="Contractors" Relationship="EVidentModel.FK_Contractor_Commune" FromRole="Commune" ToRole="Contractor" />
+    <NavigationProperty Name="Departments" Relationship="EVidentModel.FK_Department_Commune" FromRole="Commune" ToRole="Department" />
+    <NavigationProperty Name="WasteRecordCardElements" Relationship="EVidentModel.FK_WasteRecordCardElement_Commune" FromRole="Commune" ToRole="WasteRecordCardElement" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Login" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="PasswordHash" Nullable="false" MaxLength="8000" FixedLength="false" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShortName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RegisterNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Place" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Street" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BuildingNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FlatNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PostCode" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Nip" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Regon" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" />
+    <Property Type="String" Name="BusinessFirstName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BusinessLastName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BusinessPhone" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BusinessFax" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BusinessEmail" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GIOSRegisterNumber" MaxLength="7" FixedLength="true" Unicode="true" />
+    <Property Type="Boolean" Name="IsSellingElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsRecoveringElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsCollectingElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsProcessingElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsRecyclingElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsSomeElseElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsSellingBattery" Nullable="false" />
+    <Property Type="Boolean" Name="IsProcessingBattery" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Commune" Relationship="EVidentModel.FK_Company_Commune" FromRole="Company" ToRole="Commune" />
+    <NavigationProperty Name="CompanyPkds" Relationship="EVidentModel.FK_CompanyPkd_Company" FromRole="Company" ToRole="CompanyPkd" />
+    <NavigationProperty Name="CompanyRights" Relationship="EVidentModel.FK_CompanyRight_Company" FromRole="Company" ToRole="CompanyRight" />
+    <NavigationProperty Name="Contractors" Relationship="EVidentModel.FK_Contractor_Company" FromRole="Company" ToRole="Contractor" />
+    <NavigationProperty Name="Departments" Relationship="EVidentModel.FK_Department_Company" FromRole="Company" ToRole="Department" />
+  </EntityType>
+  <EntityType Name="CompanyPkd">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Company" Relationship="EVidentModel.FK_CompanyPkd_Company" FromRole="CompanyPkd" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="CompanyRight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="VirtualPath" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Company" Relationship="EVidentModel.FK_CompanyRight_Company" FromRole="CompanyRight" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Configuration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Key" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+  </EntityType>
+  <EntityType Name="Contractor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShortName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PostCode" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Place" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Street" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BuildingNumber" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FlatNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Nip" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Regon" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RegisterNumber" MaxLength="7" FixedLength="true" Unicode="true" />
+    <Property Type="Boolean" Name="IsSellingElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsRecoveringElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsCollectingElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsProcessingElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsRecyclingElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsSomeElseElectronics" Nullable="false" />
+    <Property Type="Boolean" Name="IsSellingBattery" Nullable="false" />
+    <Property Type="Boolean" Name="IsProcessingBattery" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Commune" Relationship="EVidentModel.FK_Contractor_Commune" FromRole="Contractor" ToRole="Commune" />
+    <NavigationProperty Name="Company" Relationship="EVidentModel.FK_Contractor_Company" FromRole="Contractor" ToRole="Company" />
+    <NavigationProperty Name="ContractorVehicleNumbers" Relationship="EVidentModel.FK_ContractorVehicleNumber_Contractor" FromRole="Contractor" ToRole="ContractorVehicleNumber" />
+    <NavigationProperty Name="ContractorWasteCodes" Relationship="EVidentModel.FK_ContractorWasteCode_Contractor" FromRole="Contractor" ToRole="ContractorWasteCode" />
+    <NavigationProperty Name="DprDpoes" Relationship="EVidentModel.FK_DprDpo_Contractor" FromRole="Contractor" ToRole="DprDpo" />
+    <NavigationProperty Name="WasteRecordCardElements" Relationship="EVidentModel.FK_WasteRecordCardElement_Contractor" FromRole="Contractor" ToRole="WasteRecordCardElement" />
+    <NavigationProperty Name="WasteTransferCards" Relationship="EVidentModel.FK_WasteTransferCard_Contractor" FromRole="Contractor" ToRole="WasteTransferCard" />
+    <NavigationProperty Name="WasteTransferCards1" Relationship="EVidentModel.FK_WasteTransferCard_TransportContractor" FromRole="Contractor" ToRole="WasteTransferCard" />
+  </EntityType>
+  <EntityType Name="ContractorVehicleNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Contractor" Relationship="EVidentModel.FK_ContractorVehicleNumber_Contractor" FromRole="ContractorVehicleNumber" ToRole="Contractor" />
+    <NavigationProperty Name="WasteRecordCardElements" Relationship="EVidentModel.FK_WasteRecordCardElement_ContractorVehicleNumber" FromRole="ContractorVehicleNumber" ToRole="WasteRecordCardElement" />
+  </EntityType>
+  <EntityType Name="ContractorWasteCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Contractor" Relationship="EVidentModel.FK_ContractorWasteCode_Contractor" FromRole="ContractorWasteCode" ToRole="Contractor" />
+    <NavigationProperty Name="WasteCode" Relationship="EVidentModel.FK_ContractorWasteCode_WasteCode" FromRole="ContractorWasteCode" ToRole="WasteCode" />
+  </EntityType>
+  <EntityType Name="Decision">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Number" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="ReleaseDate" Nullable="false" />
+    <Property Type="String" Name="ReleaseAuthority" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="ValidFrom" Nullable="false" />
+    <Property Type="DateTime" Name="ValidTo" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Department" Relationship="EVidentModel.FK_Decision_Department" FromRole="Decision" ToRole="Department" />
+    <NavigationProperty Name="DecisionElements" Relationship="EVidentModel.FK_DecisionElement_Decision" FromRole="Decision" ToRole="DecisionElement" />
+  </EntityType>
+  <EntityType Name="DecisionElement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Double" Name="CreatedLimit" Nullable="false" />
+    <Property Type="Boolean" Name="CreatedPgo" Nullable="false" />
+    <Property Type="Double" Name="RecycledLimit" Nullable="false" />
+    <Property Type="Double" Name="DestroyedLimit" Nullable="false" />
+    <Property Type="Boolean" Name="CanCollect" Nullable="false" />
+    <Property Type="Boolean" Name="CanTransport" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Decision" Relationship="EVidentModel.FK_DecisionElement_Decision" FromRole="DecisionElement" ToRole="Decision" />
+    <NavigationProperty Name="Installation" Relationship="EVidentModel.FK_DecisionElement_Installation" FromRole="DecisionElement" ToRole="Installation" />
+    <NavigationProperty Name="Installation1" Relationship="EVidentModel.FK_DecisionElement_Installation1" FromRole="DecisionElement" ToRole="Installation" />
+    <NavigationProperty Name="Installation2" Relationship="EVidentModel.FK_DecisionElement_Installation2" FromRole="DecisionElement" ToRole="Installation" />
+    <NavigationProperty Name="ProcessingMethod" Relationship="EVidentModel.FK_DecisionElement_ProcessingMethod" FromRole="DecisionElement" ToRole="ProcessingMethod" />
+    <NavigationProperty Name="ProcessingMethod1" Relationship="EVidentModel.FK_DecisionElement_ProcessingMethod1" FromRole="DecisionElement" ToRole="ProcessingMethod" />
+    <NavigationProperty Name="WasteCode" Relationship="EVidentModel.FK_DecisionElement_WasteCode" FromRole="DecisionElement" ToRole="WasteCode" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PostCode" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Place" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Street" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BuildingNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FlatNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" />
+    <Property Type="Boolean" Name="IsMain" Nullable="false" />
+    <Property Type="Boolean" Name="IsZSEiE" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Commune" Relationship="EVidentModel.FK_Department_Commune" FromRole="Department" ToRole="Commune" />
+    <NavigationProperty Name="Company" Relationship="EVidentModel.FK_Department_Company" FromRole="Department" ToRole="Company" />
+    <NavigationProperty Name="Decisions" Relationship="EVidentModel.FK_Decision_Department" FromRole="Department" ToRole="Decision" />
+    <NavigationProperty Name="DepartmentVehicleNumbers" Relationship="EVidentModel.FK_DepartmentVehicleNumber_Department" FromRole="Department" ToRole="DepartmentVehicleNumber" />
+    <NavigationProperty Name="DprDpoes" Relationship="EVidentModel.FK_DprDpo_Department" FromRole="Department" ToRole="DprDpo" />
+    <NavigationProperty Name="Installations" Relationship="EVidentModel.FK_Installation_Department" FromRole="Department" ToRole="Installation" />
+    <NavigationProperty Name="WasteRecordCards" Relationship="EVidentModel.FK_WasteRecordCard_Department" FromRole="Department" ToRole="WasteRecordCard" />
+  </EntityType>
+  <EntityType Name="DepartmentVehicleNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Department" Relationship="EVidentModel.FK_DepartmentVehicleNumber_Department" FromRole="DepartmentVehicleNumber" ToRole="Department" />
+    <NavigationProperty Name="WasteRecordCardElements" Relationship="EVidentModel.FK_WasteRecordCardElement_DepartmentVehicleNumber" FromRole="DepartmentVehicleNumber" ToRole="WasteRecordCardElement" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Communes" Relationship="EVidentModel.FK_Commune_District" FromRole="District" ToRole="Commune" />
+    <NavigationProperty Name="Province" Relationship="EVidentModel.FK_District_Province" FromRole="District" ToRole="Province" />
+  </EntityType>
+  <EntityType Name="DprDpo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="DprNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DpoNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Contractor" Relationship="EVidentModel.FK_DprDpo_Contractor" FromRole="DprDpo" ToRole="Contractor" />
+    <NavigationProperty Name="Department" Relationship="EVidentModel.FK_DprDpo_Department" FromRole="DprDpo" ToRole="Department" />
+    <NavigationProperty Name="Period" Relationship="EVidentModel.FK_DprDpo_Period" FromRole="DprDpo" ToRole="Period" />
+    <NavigationProperty Name="DprDpoElements" Relationship="EVidentModel.FK_DprDpoElement_DprDpo" FromRole="DprDpo" ToRole="DprDpoElement" />
+  </EntityType>
+  <EntityType Name="DprDpoElement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Double" Name="ReceivedMass" Nullable="false" />
+    <Property Type="Double" Name="RecycledMass" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="DprDpo" Relationship="EVidentModel.FK_DprDpoElement_DprDpo" FromRole="DprDpoElement" ToRole="DprDpo" />
+    <NavigationProperty Name="PackageKind" Relationship="EVidentModel.FK_DprDpoElement_PackageKind" FromRole="DprDpoElement" ToRole="PackageKind" />
+    <NavigationProperty Name="ProcessingMethod" Relationship="EVidentModel.FK_DprDpoElement_ProcessingMethod" FromRole="DprDpoElement" ToRole="ProcessingMethod" />
+    <NavigationProperty Name="RecyclingKind" Relationship="EVidentModel.FK_DprDpoElement_RecyclingKind" FromRole="DprDpoElement" ToRole="RecyclingKind" />
+    <NavigationProperty Name="WasteCode" Relationship="EVidentModel.FK_DprDpoElement_WasteCode" FromRole="DprDpoElement" ToRole="WasteCode" />
+  </EntityType>
+  <EntityType Name="Error">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+  </EntityType>
+  <EntityType Name="Installation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="ProcessingCapacity" Nullable="false" />
+    <Property Type="Double" Name="ProcessingLimit" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="DecisionElements" Relationship="EVidentModel.FK_DecisionElement_Installation" FromRole="Installation" ToRole="DecisionElement" />
+    <NavigationProperty Name="DecisionElements1" Relationship="EVidentModel.FK_DecisionElement_Installation1" FromRole="Installation" ToRole="DecisionElement" />
+    <NavigationProperty Name="DecisionElements2" Relationship="EVidentModel.FK_DecisionElement_Installation2" FromRole="Installation" ToRole="DecisionElement" />
+    <NavigationProperty Name="Department" Relationship="EVidentModel.FK_Installation_Department" FromRole="Installation" ToRole="Department" />
+    <NavigationProperty Name="InstallationKind" Relationship="EVidentModel.FK_Installation_InstallationKind" FromRole="Installation" ToRole="InstallationKind" />
+    <NavigationProperty Name="InstallationProcessingMethod" Relationship="EVidentModel.FK_Installation_InstallationProcessingMethod" FromRole="Installation" ToRole="InstallationProcessingMethod" />
+    <NavigationProperty Name="InstallationWasteCodes" Relationship="EVidentModel.FK_InstallationWasteCode_Installation" FromRole="Installation" ToRole="InstallationWasteCode" />
+    <NavigationProperty Name="WasteRecordCardElements" Relationship="EVidentModel.FK_WasteRecordCardElement_Installation" FromRole="Installation" ToRole="WasteRecordCardElement" />
+  </EntityType>
+  <EntityType Name="InstallationKind">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Installations" Relationship="EVidentModel.FK_Installation_InstallationKind" FromRole="InstallationKind" ToRole="Installation" />
+  </EntityType>
+  <EntityType Name="InstallationProcessingMethod">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Installations" Relationship="EVidentModel.FK_Installation_InstallationProcessingMethod" FromRole="InstallationProcessingMethod" ToRole="Installation" />
+  </EntityType>
+  <EntityType Name="InstallationWasteCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Installation" Relationship="EVidentModel.FK_InstallationWasteCode_Installation" FromRole="InstallationWasteCode" ToRole="Installation" />
+    <NavigationProperty Name="WasteCode" Relationship="EVidentModel.FK_InstallationWasteCode_WasteCode" FromRole="InstallationWasteCode" ToRole="WasteCode" />
+  </EntityType>
+  <EntityType Name="PackageKind">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Index" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="DprDpoElements" Relationship="EVidentModel.FK_DprDpoElement_PackageKind" FromRole="PackageKind" ToRole="DprDpoElement" />
+  </EntityType>
+  <EntityType Name="Period">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateFrom" Nullable="false" />
+    <Property Type="DateTime" Name="DateTo" Nullable="false" />
+    <Property Type="Boolean" Name="IsMain" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="DprDpoes" Relationship="EVidentModel.FK_DprDpo_Period" FromRole="Period" ToRole="DprDpo" />
+    <NavigationProperty Name="WasteRecordCards" Relationship="EVidentModel.FK_WasteRecordCard_Period" FromRole="Period" ToRole="WasteRecordCard" />
+  </EntityType>
+  <EntityType Name="ProcessingMethod">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Kind" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="DecisionElements" Relationship="EVidentModel.FK_DecisionElement_ProcessingMethod" FromRole="ProcessingMethod" ToRole="DecisionElement" />
+    <NavigationProperty Name="DecisionElements1" Relationship="EVidentModel.FK_DecisionElement_ProcessingMethod1" FromRole="ProcessingMethod" ToRole="DecisionElement" />
+    <NavigationProperty Name="DprDpoElements" Relationship="EVidentModel.FK_DprDpoElement_ProcessingMethod" FromRole="ProcessingMethod" ToRole="DprDpoElement" />
+    <NavigationProperty Name="WasteRecordCardElements" Relationship="EVidentModel.FK_WasteRecordCardElement_ProcessingMethod" FromRole="ProcessingMethod" ToRole="WasteRecordCardElement" />
+    <NavigationProperty Name="WasteRecordCardElements1" Relationship="EVidentModel.FK_WasteRecordCardElement_ProcessingMethod1" FromRole="ProcessingMethod" ToRole="WasteRecordCardElement" />
+    <NavigationProperty Name="WasteTransferCards" Relationship="EVidentModel.FK_WasteTransferCard_ProcessingMethod" FromRole="ProcessingMethod" ToRole="WasteTransferCard" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Districts" Relationship="EVidentModel.FK_District_Province" FromRole="Province" ToRole="District" />
+  </EntityType>
+  <EntityType Name="RecyclingKind">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Kind" Nullable="false" />
+    <Property Type="Int32" Name="Index" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="DprDpoElements" Relationship="EVidentModel.FK_DprDpoElement_RecyclingKind" FromRole="RecyclingKind" ToRole="DprDpoElement" />
+  </EntityType>
+  <EntityType Name="WasteCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Level" Nullable="false" />
+    <Property Type="Boolean" Name="RequireDryMass" Nullable="false" />
+    <Property Type="Boolean" Name="IsBattery" Nullable="false" />
+    <Property Type="Boolean" Name="IsZseie" Nullable="false" />
+    <Property Type="Boolean" Name="IsDangerous" Nullable="false" />
+    <Property Type="Boolean" Name="IsRemovable" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="ContractorWasteCodes" Relationship="EVidentModel.FK_ContractorWasteCode_WasteCode" FromRole="WasteCode" ToRole="ContractorWasteCode" />
+    <NavigationProperty Name="DecisionElements" Relationship="EVidentModel.FK_DecisionElement_WasteCode" FromRole="WasteCode" ToRole="DecisionElement" />
+    <NavigationProperty Name="DprDpoElements" Relationship="EVidentModel.FK_DprDpoElement_WasteCode" FromRole="WasteCode" ToRole="DprDpoElement" />
+    <NavigationProperty Name="InstallationWasteCodes" Relationship="EVidentModel.FK_InstallationWasteCode_WasteCode" FromRole="WasteCode" ToRole="InstallationWasteCode" />
+    <NavigationProperty Name="WasteRecordCards" Relationship="EVidentModel.FK_WasteRecordCard_WasteCode" FromRole="WasteCode" ToRole="WasteRecordCard" />
+  </EntityType>
+  <EntityType Name="WasteRecordCard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Number" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="Department" Relationship="EVidentModel.FK_WasteRecordCard_Department" FromRole="WasteRecordCard" ToRole="Department" />
+    <NavigationProperty Name="Period" Relationship="EVidentModel.FK_WasteRecordCard_Period" FromRole="WasteRecordCard" ToRole="Period" />
+    <NavigationProperty Name="WasteCode" Relationship="EVidentModel.FK_WasteRecordCard_WasteCode" FromRole="WasteRecordCard" ToRole="WasteCode" />
+    <NavigationProperty Name="WasteRecordCardElements" Relationship="EVidentModel.FK_WasteRecordCardElement_WasteRecordCard" FromRole="WasteRecordCard" ToRole="WasteRecordCardElement" />
+    <NavigationProperty Name="WasteTransferCards" Relationship="EVidentModel.FK_WasteTransferCard_WasteRecordCard" FromRole="WasteRecordCard" ToRole="WasteTransferCard" />
+  </EntityType>
+  <EntityType Name="WasteRecordCardElement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="Double" Name="CreatedMass" Nullable="false" />
+    <Property Type="Double" Name="CreatedDryMass" Nullable="false" />
+    <Property Type="Double" Name="ReceivedMass" Nullable="false" />
+    <Property Type="Double" Name="ReceivedDryMass" Nullable="false" />
+    <Property Type="String" Name="ReceivedCardNumber" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="ReceivedForRecyclingOrDestruction" Nullable="false" />
+    <Property Type="Double" Name="ManageMass" Nullable="false" />
+    <Property Type="Double" Name="ManageDryMass" Nullable="false" />
+    <Property Type="String" Name="ManageLp" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="TransferMass" Nullable="false" />
+    <Property Type="Double" Name="TransferDryMass" Nullable="false" />
+    <Property Type="Boolean" Name="IsBatteryFromCar" Nullable="false" />
+    <Property Type="Boolean" Name="IsPositive" Nullable="false" />
+    <Property Type="Int32" Name="Kind" Nullable="false" />
+    <Property Type="Boolean" Name="IsFromHome" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PESEL" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DocID" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CompanyName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Source" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SourceKind" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddrLineA" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AddrLineB" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PartNumber" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="PgoCommune" Relationship="EVidentModel.FK_WasteRecordCardElement_Commune" FromRole="WasteRecordCardElement" ToRole="Commune" />
+    <NavigationProperty Name="PgoContractor" Relationship="EVidentModel.FK_WasteRecordCardElement_Contractor" FromRole="WasteRecordCardElement" ToRole="Contractor" />
+    <NavigationProperty Name="ContractorVehicleNumber" Relationship="EVidentModel.FK_WasteRecordCardElement_ContractorVehicleNumber" FromRole="WasteRecordCardElement" ToRole="ContractorVehicleNumber" />
+    <NavigationProperty Name="DepartmentVehicleNumber" Relationship="EVidentModel.FK_WasteRecordCardElement_DepartmentVehicleNumber" FromRole="WasteRecordCardElement" ToRole="DepartmentVehicleNumber" />
+    <NavigationProperty Name="Installation" Relationship="EVidentModel.FK_WasteRecordCardElement_Installation" FromRole="WasteRecordCardElement" ToRole="Installation" />
+    <NavigationProperty Name="ProcessingMethod" Relationship="EVidentModel.FK_WasteRecordCardElement_ProcessingMethod" FromRole="WasteRecordCardElement" ToRole="ProcessingMethod" />
+    <NavigationProperty Name="ProcessingMethod1" Relationship="EVidentModel.FK_WasteRecordCardElement_ProcessingMethod1" FromRole="WasteRecordCardElement" ToRole="ProcessingMethod" />
+    <NavigationProperty Name="WasteRecordCard" Relationship="EVidentModel.FK_WasteRecordCardElement_WasteRecordCard" FromRole="WasteRecordCardElement" ToRole="WasteRecordCard" />
+    <NavigationProperty Name="WasteTransferCard" Relationship="EVidentModel.FK_WasteRecordCardElement_WasteTransferCard" FromRole="WasteRecordCardElement" ToRole="WasteTransferCard" />
+    <NavigationProperty Name="ZseieCode" Relationship="EVidentModel.FK_WasteRecordCardElement_ZseieCode" FromRole="WasteRecordCardElement" ToRole="ZseieCode" />
+    <NavigationProperty Name="ZseieCode1" Relationship="EVidentModel.FK_WasteRecordCardElement_ZseieCodeKind" FromRole="WasteRecordCardElement" ToRole="ZseieCode" />
+  </EntityType>
+  <EntityType Name="WasteTransferCard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WasteDestination" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsCollection" Nullable="false" />
+    <Property Type="Boolean" Name="DPOrequired" Nullable="false" />
+    <Property Type="Int32" Name="TransportKind" Nullable="false" />
+    <Property Type="String" Name="TransportVehicleNumber" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TransferCardNumber" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <Property Type="Int32" Name="Kind" Nullable="false" />
+    <NavigationProperty Name="Contractor" Relationship="EVidentModel.FK_WasteTransferCard_Contractor" FromRole="WasteTransferCard" ToRole="Contractor" />
+    <NavigationProperty Name="TransportContractor" Relationship="EVidentModel.FK_WasteTransferCard_TransportContractor" FromRole="WasteTransferCard" ToRole="Contractor" />
+    <NavigationProperty Name="ProcessingMethod" Relationship="EVidentModel.FK_WasteTransferCard_ProcessingMethod" FromRole="WasteTransferCard" ToRole="ProcessingMethod" />
+    <NavigationProperty Name="WasteRecordCard" Relationship="EVidentModel.FK_WasteTransferCard_WasteRecordCard" FromRole="WasteTransferCard" ToRole="WasteRecordCard" />
+    <NavigationProperty Name="WasteRecordCardElements" Relationship="EVidentModel.FK_WasteRecordCardElement_WasteTransferCard" FromRole="WasteTransferCard" ToRole="WasteRecordCardElement" />
+  </EntityType>
+  <EntityType Name="ZseieCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Level" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" />
+    <NavigationProperty Name="WasteRecordCardElements" Relationship="EVidentModel.FK_WasteRecordCardElement_ZseieCode" FromRole="ZseieCode" ToRole="WasteRecordCardElement" />
+    <NavigationProperty Name="WasteRecordCardElements1" Relationship="EVidentModel.FK_WasteRecordCardElement_ZseieCodeKind" FromRole="ZseieCode" ToRole="WasteRecordCardElement" />
+  </EntityType>
+  <Association Name="FK_Commune_District">
+    <End Type="EVidentModel.District" Role="District" Multiplicity="1" />
+    <End Type="EVidentModel.Commune" Role="Commune" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Company_Commune">
+    <End Type="EVidentModel.Commune" Role="Commune" Multiplicity="1" />
+    <End Type="EVidentModel.Company" Role="Company" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Contractor_Commune">
+    <End Type="EVidentModel.Commune" Role="Commune" Multiplicity="1" />
+    <End Type="EVidentModel.Contractor" Role="Contractor" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Department_Commune">
+    <End Type="EVidentModel.Commune" Role="Commune" Multiplicity="1" />
+    <End Type="EVidentModel.Department" Role="Department" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_Commune">
+    <End Type="EVidentModel.Commune" Role="Commune" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_CompanyPkd_Company">
+    <End Type="EVidentModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="EVidentModel.CompanyPkd" Role="CompanyPkd" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_CompanyRight_Company">
+    <End Type="EVidentModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="EVidentModel.CompanyRight" Role="CompanyRight" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Contractor_Company">
+    <End Type="EVidentModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="EVidentModel.Contractor" Role="Contractor" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Department_Company">
+    <End Type="EVidentModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="EVidentModel.Department" Role="Department" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_ContractorVehicleNumber_Contractor">
+    <End Type="EVidentModel.Contractor" Role="Contractor" Multiplicity="1" />
+    <End Type="EVidentModel.ContractorVehicleNumber" Role="ContractorVehicleNumber" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_ContractorWasteCode_Contractor">
+    <End Type="EVidentModel.Contractor" Role="Contractor" Multiplicity="1" />
+    <End Type="EVidentModel.ContractorWasteCode" Role="ContractorWasteCode" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DprDpo_Contractor">
+    <End Type="EVidentModel.Contractor" Role="Contractor" Multiplicity="1" />
+    <End Type="EVidentModel.DprDpo" Role="DprDpo" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_Contractor">
+    <End Type="EVidentModel.Contractor" Role="Contractor" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteTransferCard_Contractor">
+    <End Type="EVidentModel.Contractor" Role="Contractor" Multiplicity="1" />
+    <End Type="EVidentModel.WasteTransferCard" Role="WasteTransferCard" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteTransferCard_TransportContractor">
+    <End Type="EVidentModel.Contractor" Role="Contractor" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteTransferCard" Role="WasteTransferCard" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ContractorVehicleNumber">
+    <End Type="EVidentModel.ContractorVehicleNumber" Role="ContractorVehicleNumber" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_ContractorWasteCode_WasteCode">
+    <End Type="EVidentModel.WasteCode" Role="WasteCode" Multiplicity="1" />
+    <End Type="EVidentModel.ContractorWasteCode" Role="ContractorWasteCode" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Decision_Department">
+    <End Type="EVidentModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="EVidentModel.Decision" Role="Decision" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DecisionElement_Decision">
+    <End Type="EVidentModel.Decision" Role="Decision" Multiplicity="1" />
+    <End Type="EVidentModel.DecisionElement" Role="DecisionElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DecisionElement_Installation">
+    <End Type="EVidentModel.Installation" Role="Installation" Multiplicity="0..1" />
+    <End Type="EVidentModel.DecisionElement" Role="DecisionElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DecisionElement_Installation1">
+    <End Type="EVidentModel.Installation" Role="Installation" Multiplicity="0..1" />
+    <End Type="EVidentModel.DecisionElement" Role="DecisionElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DecisionElement_Installation2">
+    <End Type="EVidentModel.Installation" Role="Installation" Multiplicity="0..1" />
+    <End Type="EVidentModel.DecisionElement" Role="DecisionElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DecisionElement_ProcessingMethod">
+    <End Type="EVidentModel.ProcessingMethod" Role="ProcessingMethod" Multiplicity="0..1" />
+    <End Type="EVidentModel.DecisionElement" Role="DecisionElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DecisionElement_ProcessingMethod1">
+    <End Type="EVidentModel.ProcessingMethod" Role="ProcessingMethod" Multiplicity="0..1" />
+    <End Type="EVidentModel.DecisionElement" Role="DecisionElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DecisionElement_WasteCode">
+    <End Type="EVidentModel.WasteCode" Role="WasteCode" Multiplicity="1" />
+    <End Type="EVidentModel.DecisionElement" Role="DecisionElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DepartmentVehicleNumber_Department">
+    <End Type="EVidentModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="EVidentModel.DepartmentVehicleNumber" Role="DepartmentVehicleNumber" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DprDpo_Department">
+    <End Type="EVidentModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="EVidentModel.DprDpo" Role="DprDpo" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Installation_Department">
+    <End Type="EVidentModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="EVidentModel.Installation" Role="Installation" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCard_Department">
+    <End Type="EVidentModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="EVidentModel.WasteRecordCard" Role="WasteRecordCard" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_DepartmentVehicleNumber">
+    <End Type="EVidentModel.DepartmentVehicleNumber" Role="DepartmentVehicleNumber" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_District_Province">
+    <End Type="EVidentModel.Province" Role="Province" Multiplicity="1" />
+    <End Type="EVidentModel.District" Role="District" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DprDpo_Period">
+    <End Type="EVidentModel.Period" Role="Period" Multiplicity="1" />
+    <End Type="EVidentModel.DprDpo" Role="DprDpo" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DprDpoElement_DprDpo">
+    <End Type="EVidentModel.DprDpo" Role="DprDpo" Multiplicity="1" />
+    <End Type="EVidentModel.DprDpoElement" Role="DprDpoElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DprDpoElement_PackageKind">
+    <End Type="EVidentModel.PackageKind" Role="PackageKind" Multiplicity="1" />
+    <End Type="EVidentModel.DprDpoElement" Role="DprDpoElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DprDpoElement_ProcessingMethod">
+    <End Type="EVidentModel.ProcessingMethod" Role="ProcessingMethod" Multiplicity="1" />
+    <End Type="EVidentModel.DprDpoElement" Role="DprDpoElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DprDpoElement_RecyclingKind">
+    <End Type="EVidentModel.RecyclingKind" Role="RecyclingKind" Multiplicity="1" />
+    <End Type="EVidentModel.DprDpoElement" Role="DprDpoElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_DprDpoElement_WasteCode">
+    <End Type="EVidentModel.WasteCode" Role="WasteCode" Multiplicity="1" />
+    <End Type="EVidentModel.DprDpoElement" Role="DprDpoElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Installation_InstallationKind">
+    <End Type="EVidentModel.InstallationKind" Role="InstallationKind" Multiplicity="1" />
+    <End Type="EVidentModel.Installation" Role="Installation" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Installation_InstallationProcessingMethod">
+    <End Type="EVidentModel.InstallationProcessingMethod" Role="InstallationProcessingMethod" Multiplicity="0..1" />
+    <End Type="EVidentModel.Installation" Role="Installation" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_InstallationWasteCode_Installation">
+    <End Type="EVidentModel.Installation" Role="Installation" Multiplicity="1" />
+    <End Type="EVidentModel.InstallationWasteCode" Role="InstallationWasteCode" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_Installation">
+    <End Type="EVidentModel.Installation" Role="Installation" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_InstallationWasteCode_WasteCode">
+    <End Type="EVidentModel.WasteCode" Role="WasteCode" Multiplicity="1" />
+    <End Type="EVidentModel.InstallationWasteCode" Role="InstallationWasteCode" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCard_Period">
+    <End Type="EVidentModel.Period" Role="Period" Multiplicity="1" />
+    <End Type="EVidentModel.WasteRecordCard" Role="WasteRecordCard" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ProcessingMethod">
+    <End Type="EVidentModel.ProcessingMethod" Role="ProcessingMethod" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ProcessingMethod1">
+    <End Type="EVidentModel.ProcessingMethod" Role="ProcessingMethod" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteTransferCard_ProcessingMethod">
+    <End Type="EVidentModel.ProcessingMethod" Role="ProcessingMethod" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteTransferCard" Role="WasteTransferCard" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCard_WasteCode">
+    <End Type="EVidentModel.WasteCode" Role="WasteCode" Multiplicity="1" />
+    <End Type="EVidentModel.WasteRecordCard" Role="WasteRecordCard" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_WasteRecordCard">
+    <End Type="EVidentModel.WasteRecordCard" Role="WasteRecordCard" Multiplicity="1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteTransferCard_WasteRecordCard">
+    <End Type="EVidentModel.WasteRecordCard" Role="WasteRecordCard" Multiplicity="1" />
+    <End Type="EVidentModel.WasteTransferCard" Role="WasteTransferCard" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_WasteTransferCard">
+    <End Type="EVidentModel.WasteTransferCard" Role="WasteTransferCard" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ZseieCode">
+    <End Type="EVidentModel.ZseieCode" Role="ZseieCode" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WasteRecordCardElement_ZseieCodeKind">
+    <End Type="EVidentModel.ZseieCode" Role="ZseieCode" Multiplicity="0..1" />
+    <End Type="EVidentModel.WasteRecordCardElement" Role="WasteRecordCardElement" Multiplicity="*" />
+  </Association>
+</Schema>

@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="EVidentModelStoreContainer" CdmEntityContainer="EVidentDataModel">
+    <EntitySetMapping Name="AddressBooks">
+      <EntityTypeMapping TypeName="EVidentModel.AddressBook">
+        <MappingFragment StoreEntitySet="AddressBook">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="HomeSite" ColumnName="HomeSite" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Communes">
+      <EntityTypeMapping TypeName="EVidentModel.Commune">
+        <MappingFragment StoreEntitySet="Commune">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="EVidentModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="IsProcessingBattery" ColumnName="IsProcessingBattery" />
+          <ScalarProperty Name="IsSellingBattery" ColumnName="IsSellingBattery" />
+          <ScalarProperty Name="IsSomeElseElectronics" ColumnName="IsSomeElseElectronics" />
+          <ScalarProperty Name="IsRecyclingElectronics" ColumnName="IsRecyclingElectronics" />
+          <ScalarProperty Name="IsProcessingElectronics" ColumnName="IsProcessingElectronics" />
+          <ScalarProperty Name="IsCollectingElectronics" ColumnName="IsCollectingElectronics" />
+          <ScalarProperty Name="IsRecoveringElectronics" ColumnName="IsRecoveringElectronics" />
+          <ScalarProperty Name="IsSellingElectronics" ColumnName="IsSellingElectronics" />
+          <ScalarProperty Name="GIOSRegisterNumber" ColumnName="GIOSRegisterNumber" />
+          <ScalarProperty Name="BusinessEmail" ColumnName="BusinessEmail" />
+          <ScalarProperty Name="BusinessFax" ColumnName="BusinessFax" />
+          <ScalarProperty Name="BusinessPhone" ColumnName="BusinessPhone" />
+          <ScalarProperty Name="BusinessLastName" ColumnName="BusinessLastName" />
+          <ScalarProperty Name="BusinessFirstName" ColumnName="BusinessFirstName" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Regon" ColumnName="Regon" />
+          <ScalarProperty Name="Nip" ColumnName="Nip" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="FlatNumber" ColumnName="FlatNumber" />
+          <ScalarProperty Name="BuildingNumber" ColumnName="BuildingNumber" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="RegisterNumber" ColumnName="RegisterNumber" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyPkds">
+      <EntityTypeMapping TypeName="EVidentModel.CompanyPkd">
+        <MappingFragment StoreEntitySet="CompanyPkd">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyRights">
+      <EntityTypeMapping TypeName="EVidentModel.CompanyRight">
+        <MappingFragment StoreEntitySet="CompanyRight">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="VirtualPath" ColumnName="VirtualPath" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configurations">
+      <EntityTypeMapping TypeName="EVidentModel.Configuration">
+        <MappingFragment StoreEntitySet="Configuration">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contractors">
+      <EntityTypeMapping TypeName="EVidentModel.Contractor">
+        <MappingFragment StoreEntitySet="Contractor">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="IsProcessingBattery" ColumnName="IsProcessingBattery" />
+          <ScalarProperty Name="IsSellingBattery" ColumnName="IsSellingBattery" />
+          <ScalarProperty Name="IsSomeElseElectronics" ColumnName="IsSomeElseElectronics" />
+          <ScalarProperty Name="IsRecyclingElectronics" ColumnName="IsRecyclingElectronics" />
+          <ScalarProperty Name="IsProcessingElectronics" ColumnName="IsProcessingElectronics" />
+          <ScalarProperty Name="IsCollectingElectronics" ColumnName="IsCollectingElectronics" />
+          <ScalarProperty Name="IsRecoveringElectronics" ColumnName="IsRecoveringElectronics" />
+          <ScalarProperty Name="IsSellingElectronics" ColumnName="IsSellingElectronics" />
+          <ScalarProperty Name="RegisterNumber" ColumnName="RegisterNumber" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Regon" ColumnName="Regon" />
+          <ScalarProperty Name="Nip" ColumnName="Nip" />
+          <ScalarProperty Name="FlatNumber" ColumnName="FlatNumber" />
+          <ScalarProperty Name="BuildingNumber" ColumnName="BuildingNumber" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractorVehicleNumbers">
+      <EntityTypeMapping TypeName="EVidentModel.ContractorVehicleNumber">
+        <MappingFragment StoreEntitySet="ContractorVehicleNumber">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractorWasteCodes">
+      <EntityTypeMapping TypeName="EVidentModel.ContractorWasteCode">
+        <MappingFragment StoreEntitySet="ContractorWasteCode">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Decisions">
+      <EntityTypeMapping TypeName="EVidentModel.Decision">
+        <MappingFragment StoreEntitySet="Decision">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ReleaseAuthority" ColumnName="ReleaseAuthority" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DecisionElements">
+      <EntityTypeMapping TypeName="EVidentModel.DecisionElement">
+        <MappingFragment StoreEntitySet="DecisionElement">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="CanTransport" ColumnName="CanTransport" />
+          <ScalarProperty Name="CanCollect" ColumnName="CanCollect" />
+          <ScalarProperty Name="DestroyedLimit" ColumnName="DestroyedLimit" />
+          <ScalarProperty Name="RecycledLimit" ColumnName="RecycledLimit" />
+          <ScalarProperty Name="CreatedPgo" ColumnName="CreatedPgo" />
+          <ScalarProperty Name="CreatedLimit" ColumnName="CreatedLimit" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="EVidentModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="IsZSEiE" ColumnName="IsZSEiE" />
+          <ScalarProperty Name="IsMain" ColumnName="IsMain" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="FlatNumber" ColumnName="FlatNumber" />
+          <ScalarProperty Name="BuildingNumber" ColumnName="BuildingNumber" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentVehicleNumbers">
+      <EntityTypeMapping TypeName="EVidentModel.DepartmentVehicleNumber">
+        <MappingFragment StoreEntitySet="DepartmentVehicleNumber">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Districts">
+      <EntityTypeMapping TypeName="EVidentModel.District">
+        <MappingFragment StoreEntitySet="District">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DprDpoes">
+      <EntityTypeMapping TypeName="EVidentModel.DprDpo">
+        <MappingFragment StoreEntitySet="DprDpo">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="DpoNumber" ColumnName="DpoNumber" />
+          <ScalarProperty Name="DprNumber" ColumnName="DprNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DprDpoElements">
+      <EntityTypeMapping TypeName="EVidentModel.DprDpoElement">
+        <MappingFragment StoreEntitySet="DprDpoElement">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="RecycledMass" ColumnName="RecycledMass" />
+          <ScalarProperty Name="ReceivedMass" ColumnName="ReceivedMass" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Errors">
+      <EntityTypeMapping TypeName="EVidentModel.Error">
+        <MappingFragment StoreEntitySet="Error">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Installations">
+      <EntityTypeMapping TypeName="EVidentModel.Installation">
+        <MappingFragment StoreEntitySet="Installation">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="ProcessingLimit" ColumnName="ProcessingLimit" />
+          <ScalarProperty Name="ProcessingCapacity" ColumnName="ProcessingCapacity" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstallationKinds">
+      <EntityTypeMapping TypeName="EVidentModel.InstallationKind">
+        <MappingFragment StoreEntitySet="InstallationKind">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstallationProcessingMethods">
+      <EntityTypeMapping TypeName="EVidentModel.InstallationProcessingMethod">
+        <MappingFragment StoreEntitySet="InstallationProcessingMethod">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstallationWasteCodes">
+      <EntityTypeMapping TypeName="EVidentModel.InstallationWasteCode">
+        <MappingFragment StoreEntitySet="InstallationWasteCode">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PackageKinds">
+      <EntityTypeMapping TypeName="EVidentModel.PackageKind">
+        <MappingFragment StoreEntitySet="PackageKind">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Periods">
+      <EntityTypeMapping TypeName="EVidentModel.Period">
+        <MappingFragment StoreEntitySet="Period">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="IsMain" ColumnName="IsMain" />
+          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcessingMethods">
+      <EntityTypeMapping TypeName="EVidentModel.ProcessingMethod">
+        <MappingFragment StoreEntitySet="ProcessingMethod">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="EVidentModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecyclingKinds">
+      <EntityTypeMapping TypeName="EVidentModel.RecyclingKind">
+        <MappingFragment StoreEntitySet="RecyclingKind">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WasteCodes">
+      <EntityTypeMapping TypeName="EVidentModel.WasteCode">
+        <MappingFragment StoreEntitySet="WasteCode">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="IsRemovable" ColumnName="IsRemovable" />
+          <ScalarProperty Name="IsDangerous" ColumnName="IsDangerous" />
+          <ScalarProperty Name="IsZseie" ColumnName="IsZseie" />
+          <ScalarProperty Name="IsBattery" ColumnName="IsBattery" />
+          <ScalarProperty Name="RequireDryMass" ColumnName="RequireDryMass" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WasteRecordCards">
+      <EntityTypeMapping TypeName="EVidentModel.WasteRecordCard">
+        <MappingFragment StoreEntitySet="WasteRecordCard">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WasteRecordCardElements">
+      <EntityTypeMapping TypeName="EVidentModel.WasteRecordCardElement">
+        <MappingFragment StoreEntitySet="WasteRecordCardElement">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="PartNumber" ColumnName="PartNumber" />
+          <ScalarProperty Name="AddrLineB" ColumnName="AddrLineB" />
+          <ScalarProperty Name="AddrLineA" ColumnName="AddrLineA" />
+          <ScalarProperty Name="SourceKind" ColumnName="SourceKind" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsFromHome" ColumnName="IsFromHome" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="IsPositive" ColumnName="IsPositive" />
+          <ScalarProperty Name="IsBatteryFromCar" ColumnName="IsBatteryFromCar" />
+          <ScalarProperty Name="TransferDryMass" ColumnName="TransferDryMass" />
+          <ScalarProperty Name="TransferMass" ColumnName="TransferMass" />
+          <ScalarProperty Name="ManageLp" ColumnName="ManageLp" />
+          <ScalarProperty Name="ManageDryMass" ColumnName="ManageDryMass" />
+          <ScalarProperty Name="ManageMass" ColumnName="ManageMass" />
+          <ScalarProperty Name="ReceivedForRecyclingOrDestruction" ColumnName="ReceivedForRecyclingOrDestruction" />
+          <ScalarProperty Name="ReceivedCardNumber" ColumnName="ReceivedCardNumber" />
+          <ScalarProperty Name="ReceivedDryMass" ColumnName="ReceivedDryMass" />
+          <ScalarProperty Name="ReceivedMass" ColumnName="ReceivedMass" />
+          <ScalarProperty Name="CreatedDryMass" ColumnName="CreatedDryMass" />
+          <ScalarProperty Name="CreatedMass" ColumnName="CreatedMass" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WasteTransferCards">
+      <EntityTypeMapping TypeName="EVidentModel.WasteTransferCard">
+        <MappingFragment StoreEntitySet="WasteTransferCard">
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="TransferCardNumber" ColumnName="TransferCardNumber" />
+          <ScalarProperty Name="TransportVehicleNumber" ColumnName="TransportVehicleNumber" />
+          <ScalarProperty Name="TransportKind" ColumnName="TransportKind" />
+          <ScalarProperty Name="DPOrequired" ColumnName="DPOrequired" />
+          <ScalarProperty Name="IsCollection" ColumnName="IsCollection" />
+          <ScalarProperty Name="WasteDestination" ColumnName="WasteDestination" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZseieCodes">
+      <EntityTypeMapping TypeName="EVidentModel.ZseieCode">
+        <MappingFragment StoreEntitySet="ZseieCode">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Commune_District" TypeName="EVidentModel.FK_Commune_District" StoreEntitySet="Commune">
+      <EndProperty Name="Commune">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="District">
+        <ScalarProperty Name="Id" ColumnName="DistrictId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Company_Commune" TypeName="EVidentModel.FK_Company_Commune" StoreEntitySet="Company">
+      <EndProperty Name="Company">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Commune">
+        <ScalarProperty Name="Id" ColumnName="CommuneId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Contractor_Commune" TypeName="EVidentModel.FK_Contractor_Commune" StoreEntitySet="Contractor">
+      <EndProperty Name="Contractor">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Commune">
+        <ScalarProperty Name="Id" ColumnName="CommuneId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Department_Commune" TypeName="EVidentModel.FK_Department_Commune" StoreEntitySet="Department">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Commune">
+        <ScalarProperty Name="Id" ColumnName="CommuneId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_Commune" TypeName="EVidentModel.FK_WasteRecordCardElement_Commune" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Commune">
+        <ScalarProperty Name="Id" ColumnName="PgoCommuneId" />
+      </EndProperty>
+      <Condition ColumnName="PgoCommuneId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CompanyPkd_Company" TypeName="EVidentModel.FK_CompanyPkd_Company" StoreEntitySet="CompanyPkd">
+      <EndProperty Name="CompanyPkd">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Company">
+        <ScalarProperty Name="Id" ColumnName="CompanyId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CompanyRight_Company" TypeName="EVidentModel.FK_CompanyRight_Company" StoreEntitySet="CompanyRight">
+      <EndProperty Name="CompanyRight">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Company">
+        <ScalarProperty Name="Id" ColumnName="CompanyId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Contractor_Company" TypeName="EVidentModel.FK_Contractor_Company" StoreEntitySet="Contractor">
+      <EndProperty Name="Contractor">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Company">
+        <ScalarProperty Name="Id" ColumnName="CompanyId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Department_Company" TypeName="EVidentModel.FK_Department_Company" StoreEntitySet="Department">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Company">
+        <ScalarProperty Name="Id" ColumnName="CompanyId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_ContractorVehicleNumber_Contractor" TypeName="EVidentModel.FK_ContractorVehicleNumber_Contractor" StoreEntitySet="ContractorVehicleNumber">
+      <EndProperty Name="ContractorVehicleNumber">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Contractor">
+        <ScalarProperty Name="Id" ColumnName="ContractorId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_ContractorWasteCode_Contractor" TypeName="EVidentModel.FK_ContractorWasteCode_Contractor" StoreEntitySet="ContractorWasteCode">
+      <EndProperty Name="ContractorWasteCode">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Contractor">
+        <ScalarProperty Name="Id" ColumnName="ContractorId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DprDpo_Contractor" TypeName="EVidentModel.FK_DprDpo_Contractor" StoreEntitySet="DprDpo">
+      <EndProperty Name="DprDpo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Contractor">
+        <ScalarProperty Name="Id" ColumnName="ContractorId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_Contractor" TypeName="EVidentModel.FK_WasteRecordCardElement_Contractor" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Contractor">
+        <ScalarProperty Name="Id" ColumnName="PgoContractorId" />
+      </EndProperty>
+      <Condition ColumnName="PgoContractorId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteTransferCard_Contractor" TypeName="EVidentModel.FK_WasteTransferCard_Contractor" StoreEntitySet="WasteTransferCard">
+      <EndProperty Name="WasteTransferCard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Contractor">
+        <ScalarProperty Name="Id" ColumnName="ContractorId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteTransferCard_TransportContractor" TypeName="EVidentModel.FK_WasteTransferCard_TransportContractor" StoreEntitySet="WasteTransferCard">
+      <EndProperty Name="WasteTransferCard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Contractor">
+        <ScalarProperty Name="Id" ColumnName="TransportContractorId" />
+      </EndProperty>
+      <Condition ColumnName="TransportContractorId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_ContractorVehicleNumber" TypeName="EVidentModel.FK_WasteRecordCardElement_ContractorVehicleNumber" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="ContractorVehicleNumber">
+        <ScalarProperty Name="Id" ColumnName="ContractorVehicleNumberId" />
+      </EndProperty>
+      <Condition ColumnName="ContractorVehicleNumberId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_ContractorWasteCode_WasteCode" TypeName="EVidentModel.FK_ContractorWasteCode_WasteCode" StoreEntitySet="ContractorWasteCode">
+      <EndProperty Name="ContractorWasteCode">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="WasteCode">
+        <ScalarProperty Name="Id" ColumnName="WasteCodeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Decision_Department" TypeName="EVidentModel.FK_Decision_Department" StoreEntitySet="Decision">
+      <EndProperty Name="Decision">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="DepartmentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DecisionElement_Decision" TypeName="EVidentModel.FK_DecisionElement_Decision" StoreEntitySet="DecisionElement">
+      <EndProperty Name="DecisionElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Decision">
+        <ScalarProperty Name="Id" ColumnName="DecisionId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DecisionElement_Installation" TypeName="EVidentModel.FK_DecisionElement_Installation" StoreEntitySet="DecisionElement">
+      <EndProperty Name="DecisionElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Installation">
+        <ScalarProperty Name="Id" ColumnName="CreatedInstallationId" />
+      </EndProperty>
+      <Condition ColumnName="CreatedInstallationId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DecisionElement_Installation1" TypeName="EVidentModel.FK_DecisionElement_Installation1" StoreEntitySet="DecisionElement">
+      <EndProperty Name="DecisionElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Installation">
+        <ScalarProperty Name="Id" ColumnName="RecycledInstallationId" />
+      </EndProperty>
+      <Condition ColumnName="RecycledInstallationId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DecisionElement_Installation2" TypeName="EVidentModel.FK_DecisionElement_Installation2" StoreEntitySet="DecisionElement">
+      <EndProperty Name="DecisionElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Installation">
+        <ScalarProperty Name="Id" ColumnName="DestroyedInstallationId" />
+      </EndProperty>
+      <Condition ColumnName="DestroyedInstallationId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DecisionElement_ProcessingMethod" TypeName="EVidentModel.FK_DecisionElement_ProcessingMethod" StoreEntitySet="DecisionElement">
+      <EndProperty Name="DecisionElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="ProcessingMethod">
+        <ScalarProperty Name="Id" ColumnName="RecycledMethodId" />
+      </EndProperty>
+      <Condition ColumnName="RecycledMethodId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DecisionElement_ProcessingMethod1" TypeName="EVidentModel.FK_DecisionElement_ProcessingMethod1" StoreEntitySet="DecisionElement">
+      <EndProperty Name="DecisionElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="ProcessingMethod">
+        <ScalarProperty Name="Id" ColumnName="DestroyedMethodId" />
+      </EndProperty>
+      <Condition ColumnName="DestroyedMethodId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DecisionElement_WasteCode" TypeName="EVidentModel.FK_DecisionElement_WasteCode" StoreEntitySet="DecisionElement">
+      <EndProperty Name="DecisionElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="WasteCode">
+        <ScalarProperty Name="Id" ColumnName="WasteCodeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DepartmentVehicleNumber_Department" TypeName="EVidentModel.FK_DepartmentVehicleNumber_Department" StoreEntitySet="DepartmentVehicleNumber">
+      <EndProperty Name="DepartmentVehicleNumber">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="DepartmentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DprDpo_Department" TypeName="EVidentModel.FK_DprDpo_Department" StoreEntitySet="DprDpo">
+      <EndProperty Name="DprDpo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="DepartmentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Installation_Department" TypeName="EVidentModel.FK_Installation_Department" StoreEntitySet="Installation">
+      <EndProperty Name="Installation">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="DepartmentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCard_Department" TypeName="EVidentModel.FK_WasteRecordCard_Department" StoreEntitySet="WasteRecordCard">
+      <EndProperty Name="WasteRecordCard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="DepartmentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_DepartmentVehicleNumber" TypeName="EVidentModel.FK_WasteRecordCardElement_DepartmentVehicleNumber" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="DepartmentVehicleNumber">
+        <ScalarProperty Name="Id" ColumnName="DepartmentVehicleNumberId" />
+      </EndProperty>
+      <Condition ColumnName="DepartmentVehicleNumberId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_District_Province" TypeName="EVidentModel.FK_District_Province" StoreEntitySet="District">
+      <EndProperty Name="District">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Province">
+        <ScalarProperty Name="Id" ColumnName="ProvinceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DprDpo_Period" TypeName="EVidentModel.FK_DprDpo_Period" StoreEntitySet="DprDpo">
+      <EndProperty Name="DprDpo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Period">
+        <ScalarProperty Name="Id" ColumnName="PeriodId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DprDpoElement_DprDpo" TypeName="EVidentModel.FK_DprDpoElement_DprDpo" StoreEntitySet="DprDpoElement">
+      <EndProperty Name="DprDpoElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="DprDpo">
+        <ScalarProperty Name="Id" ColumnName="DprDpoId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DprDpoElement_PackageKind" TypeName="EVidentModel.FK_DprDpoElement_PackageKind" StoreEntitySet="DprDpoElement">
+      <EndProperty Name="DprDpoElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="PackageKind">
+        <ScalarProperty Name="Id" ColumnName="PackageKindId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DprDpoElement_ProcessingMethod" TypeName="EVidentModel.FK_DprDpoElement_ProcessingMethod" StoreEntitySet="DprDpoElement">
+      <EndProperty Name="DprDpoElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="ProcessingMethod">
+        <ScalarProperty Name="Id" ColumnName="ProcessingMethodId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DprDpoElement_RecyclingKind" TypeName="EVidentModel.FK_DprDpoElement_RecyclingKind" StoreEntitySet="DprDpoElement">
+      <EndProperty Name="DprDpoElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="RecyclingKind">
+        <ScalarProperty Name="Id" ColumnName="RecyclingKindId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DprDpoElement_WasteCode" TypeName="EVidentModel.FK_DprDpoElement_WasteCode" StoreEntitySet="DprDpoElement">
+      <EndProperty Name="DprDpoElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="WasteCode">
+        <ScalarProperty Name="Id" ColumnName="WasteCodeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Installation_InstallationKind" TypeName="EVidentModel.FK_Installation_InstallationKind" StoreEntitySet="Installation">
+      <EndProperty Name="Installation">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="InstallationKind">
+        <ScalarProperty Name="Id" ColumnName="InstallationKindId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Installation_InstallationProcessingMethod" TypeName="EVidentModel.FK_Installation_InstallationProcessingMethod" StoreEntitySet="Installation">
+      <EndProperty Name="Installation">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="InstallationProcessingMethod">
+        <ScalarProperty Name="Id" ColumnName="InstallationProcessingMethodId" />
+      </EndProperty>
+      <Condition ColumnName="InstallationProcessingMethodId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_InstallationWasteCode_Installation" TypeName="EVidentModel.FK_InstallationWasteCode_Installation" StoreEntitySet="InstallationWasteCode">
+      <EndProperty Name="InstallationWasteCode">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Installation">
+        <ScalarProperty Name="Id" ColumnName="InstallationId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_Installation" TypeName="EVidentModel.FK_WasteRecordCardElement_Installation" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Installation">
+        <ScalarProperty Name="Id" ColumnName="ManageInstallationId" />
+      </EndProperty>
+      <Condition ColumnName="ManageInstallationId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_InstallationWasteCode_WasteCode" TypeName="EVidentModel.FK_InstallationWasteCode_WasteCode" StoreEntitySet="InstallationWasteCode">
+      <EndProperty Name="InstallationWasteCode">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="WasteCode">
+        <ScalarProperty Name="Id" ColumnName="WasteCodeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCard_Period" TypeName="EVidentModel.FK_WasteRecordCard_Period" StoreEntitySet="WasteRecordCard">
+      <EndProperty Name="WasteRecordCard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Period">
+        <ScalarProperty Name="Id" ColumnName="PeriodId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_ProcessingMethod" TypeName="EVidentModel.FK_WasteRecordCardElement_ProcessingMethod" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="ProcessingMethod">
+        <ScalarProperty Name="Id" ColumnName="ManageProcessingMethodId" />
+      </EndProperty>
+      <Condition ColumnName="ManageProcessingMethodId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_ProcessingMethod1" TypeName="EVidentModel.FK_WasteRecordCardElement_ProcessingMethod1" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="ProcessingMethod">
+        <ScalarProperty Name="Id" ColumnName="TransferProcessingMethodId" />
+      </EndProperty>
+      <Condition ColumnName="TransferProcessingMethodId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteTransferCard_ProcessingMethod" TypeName="EVidentModel.FK_WasteTransferCard_ProcessingMethod" StoreEntitySet="WasteTransferCard">
+      <EndProperty Name="WasteTransferCard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="ProcessingMethod">
+        <ScalarProperty Name="Id" ColumnName="ProcessingMethodId" />
+      </EndProperty>
+      <Condition ColumnName="ProcessingMethodId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCard_WasteCode" TypeName="EVidentModel.FK_WasteRecordCard_WasteCode" StoreEntitySet="WasteRecordCard">
+      <EndProperty Name="WasteRecordCard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="WasteCode">
+        <ScalarProperty Name="Id" ColumnName="WasteCodeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_WasteRecordCard" TypeName="EVidentModel.FK_WasteRecordCardElement_WasteRecordCard" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="WasteRecordCard">
+        <ScalarProperty Name="Id" ColumnName="WasteRecordCardId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteTransferCard_WasteRecordCard" TypeName="EVidentModel.FK_WasteTransferCard_WasteRecordCard" StoreEntitySet="WasteTransferCard">
+      <EndProperty Name="WasteTransferCard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="WasteRecordCard">
+        <ScalarProperty Name="Id" ColumnName="WasteRecordCardId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_WasteTransferCard" TypeName="EVidentModel.FK_WasteRecordCardElement_WasteTransferCard" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="WasteTransferCard">
+        <ScalarProperty Name="Id" ColumnName="WasteTransferCardId" />
+      </EndProperty>
+      <Condition ColumnName="WasteTransferCardId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_ZseieCode" TypeName="EVidentModel.FK_WasteRecordCardElement_ZseieCode" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="ZseieCode">
+        <ScalarProperty Name="Id" ColumnName="ZseieCodeId" />
+      </EndProperty>
+      <Condition ColumnName="ZseieCodeId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_WasteRecordCardElement_ZseieCodeKind" TypeName="EVidentModel.FK_WasteRecordCardElement_ZseieCodeKind" StoreEntitySet="WasteRecordCardElement">
+      <EndProperty Name="WasteRecordCardElement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="ZseieCode">
+        <ScalarProperty Name="Id" ColumnName="ZseieKind" />
+      </EndProperty>
+      <Condition ColumnName="ZseieKind" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
